@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*
+body {
+    background: #fff;
+    min-height: 100vh;
+    font-family: "Helvetica";
+    position: relative;
+    height: 1000px;
+}
+*/
+.btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 2;
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
+.copy__right {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+    z-index: 2;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.contact_us {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    color: white;
+    z-index: 2;
+    padding: 15px 25px;
+    border: 2px solid #fff;
+    font-weight: 700;
+    /*cursor: pointer;*/
+}
+
+.contact_us:hover {
+    background-color: #fff;
+    color: #171717;
+    transition: 0.5s;
+}
+
+.logo__new {
+    position: fixed;
+    top: 25px;
+    left: 0px;
+    padding-left: 50px;
+    z-index: 2;
+    display: flex;
+    width: 70px;
+    height: 70px;
+}
+
+.btn span {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    display: flex;
+    position: absolute;
+    transition: 0.7s;
+}
+
+.btn, .logo {
+    position: fixed;
+}
+
+.btn span:nth-child(1) {
+    top: 20%;
+}
+.btn span:nth-child(2) {
+    top: 80%;
+}
+
+.btn.is-active span {
+    background: #fff;
+}
+
+.btn.is-active span:nth-child(1) {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+.btn.is-active span:nth-child(2) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.menu {
+    background: #171717;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px;
+    z-index: 1;
+    transition: 0.7s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.menu__item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.menu__link {
+    position: relative;
+    display: inline-flex;
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu__link:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    display: inline-flex;
+    background: #ccc;
+    transition: 0.7s;
+}
+
+.menu.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu__link:hover:after {
+    width: 100%;
+}
+
+.logo__pic {
+    width: 5vw;
+    max-width: 150px;
+    min-width: 70px;
+}
+
+.pic {
+    max-width: 100%;
+}

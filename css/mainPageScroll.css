@@ -1,0 +1,74 @@
+  #mask {
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow: hidden;
+    background-color: #111;
+  }
+  
+  #containerSnapScroll {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition-property: top, bottom;
+      -webkit-transition-duration: 1s;
+       -moz-property: top, bottom;
+       -moz-duration: 1s;
+        -ms-property: top, bottom;
+        -ms-duration: 1s;
+         -o-property: top, bottom;
+         -o-duration: 1s;
+          transition-property: top, bottom;
+          transition-duration: 1s;
+  }
+  
+  section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+  
+  
+  nav ul {
+    z-index: 1;
+    list-style: none;
+    position: fixed;
+    right: 30px;
+    top: 40%;
+  }
+  
+  nav ul li {
+    background: white;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 2px;
+    border-radius: 8px;
+    /*cursor: pointer;*/
+  }
+  
+  .data_section {
+    opacity: 0.2;
+  }
+  
+  #data_section_0 {
+    opacity: 0.6;
+  }
+
+.imageTwo {
+  top: 0;
+  bottom: 0;
+  -webkit-transition-property: top, bottom;
+    -webkit-transition-duration: 1s;
+     -moz-property: top, bottom;
+     -moz-duration: 1s;
+      -ms-property: top, bottom;
+      -ms-duration: 1s;
+       -o-property: top, bottom;
+       -o-duration: 1s;
+        transition-property: top, bottom;
+        transition-duration: 1s;
+}
