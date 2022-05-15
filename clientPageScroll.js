@@ -10,6 +10,7 @@
 
     var wheel = function(event){
         var delta = 0;
+
         var currentEvent = event || window.event;
         //alert(currentEvent.detail / 3);
 
@@ -25,6 +26,7 @@
     };
 
     var wheel2 = function(event) {
+        alert(99);
         var st = window.pageYOffset || document.documentElement.scrollTop;
 
         if(st > lastScrollTop) {
@@ -32,6 +34,28 @@
         } else {
             mousewheelHandle(1);
         }
+
+        lastScrollTop = st <= 0 ? 0 : st;
+    }
+
+    var lastY;
+
+    var currentY;
+
+    var wheelstart = function(e) {
+        var currentY = e.originalEvent.touches[0].clientY;
+        lastY = currentY;
+        e.preventDefault();
+    }
+
+    var wheelmove = function (e){
+        var currentY = e.originalEvent.touches[0].clientY;
+        delta = currentY - lastY;
+    
+        //this.scrollTop += delta * -1;
+        alert(delta);
+        lastY = currentY;
+        e.preventDefault();
     }
 
     var mousewheelHandle = function(delta) {
@@ -75,9 +99,10 @@
     
     window.addEventListener("scroll", wheel2, false);
 
-    window.addEventListener('DOMMouseScroll', wheel, false);
-    window.addEventListener('mousewheel', wheel, false);
-    window.addEventListener('touchmove', wheel, false);
+    window.addEventListener('DOMMouseScroll', wheel, false); //desktop
+    window.addEventListener('mousewheel', wheel, false); //desktop
+    window.addEventListener('touchstart', wheelstart, false);
+    window.addEventListener('touchmove', wheelmove, false);
     
     window.onmousewheel = document.onmousewheel = wheel;
 

@@ -1516,3 +1516,10 @@
   color: white;
   font-size: 90px;
 }
+
+.autonera-section2__flex1,
+.autonera-section3__flex4,
+.autonera-section4__flex7 {
+  padding-right: 60px;
+
+}
