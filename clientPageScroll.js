@@ -1,3 +1,4 @@
+if(window.location.pathname == '/' || window.location.pathname == '/index.html') { 
 (function (window, document, leScroll, undefined) {
 	'use strict';
 
@@ -26,7 +27,6 @@
     };
 
     var wheel2 = function(event) {
-        alert(99);
         var st = window.pageYOffset || document.documentElement.scrollTop;
 
         if(st > lastScrollTop) {
@@ -42,6 +42,7 @@
 
     var currentY;
 
+    /*
     var wheelstart = function(e) {
         var currentY = e.originalEvent.touches[0].clientY;
         lastY = currentY;
@@ -53,11 +54,10 @@
         delta = currentY - lastY;
     
         //this.scrollTop += delta * -1;
-        alert(delta);
         lastY = currentY;
         e.preventDefault();
     }
-
+*/
     var mousewheelHandle = function(delta) {
         if(leScroll.scrolling) {
             return;
@@ -96,15 +96,15 @@
     });
 
 	var lastScrollTop = 0;
-    
     window.addEventListener("scroll", wheel2, false);
 
     window.addEventListener('DOMMouseScroll', wheel, false); //desktop
     window.addEventListener('mousewheel', wheel, false); //desktop
-    window.addEventListener('touchstart', wheelstart, false);
-    window.addEventListener('touchmove', wheelmove, false);
+    /*window.addEventListener('touchstart', wheelstart, false);
+    window.addEventListener('touchmove', wheelmove, false);*/
     
     window.onmousewheel = document.onmousewheel = wheel;
 
-})(window, document, leScroll);// jshint ignore:line
+})(window, document, leScroll);// ignore:line
 
+}

@@ -4,7 +4,9 @@
     width: 100vw;
     position: absolute;
     overflow: hidden;
-    background-color: #111;
+    /*background-color: #111;
+    background-image: linear-gradient(to right, #3525b3, #fa467c);*/
+    background-image: linear-gradient(to right, #3525b3, #c11145);
   }
   
   #containerSnapScroll {

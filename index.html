@@ -2,7 +2,7 @@
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0" />
 
 	  <link rel="profile" href="https://gmpg.org/xfn/11">
 	  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
@@ -13,8 +13,13 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    
+    <script src="mainPageScroll.js" defer></script>
+    <script src="clientPageScroll.js" defer></script>
 
-    <title>Autonera - Automation Era</title>
+    <title>Autonera - Boost what is desired.. cut what is not.</title>
     <meta name="description" content="Autonera is an Internet of Things IoT and Artificial Intelligence AI company that offers high-value digital transformations and automations." />
     <link rel="canonical" href="https://autonera-sa.com/" />
     <meta property="og:locale" content="en_US" />
@@ -41,10 +46,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link rel="stylesheet" type="text/css" href="css/mainPageScroll.css" />
     <link rel="stylesheet" type="text/css" href="css/resetPageScroll.css" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/Page.css" />
     <link rel="stylesheet" type="text/css" href="css/Autonera.css" />
     <link rel="stylesheet" type="text/css" href="css/customscroll.css" />
     <link rel="stylesheet" type="text/css" href="css/navbar.css" />
@@ -55,61 +60,101 @@
     <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
 
   </head>
-  <body style="display: flex; flex-direction: column;">
- 
-    <div id="loading">
-      <div class="loadingWrapper">
-        <div class="loadingImage">  
-          <img id="loading-image" src="assets/icononly_transparent_white_no_boundry_with_name.svg" alt="Loading..." />
-        </div>
+  <body data-barba="wrapper">
 
-        <div id="overlay">
-          <!--div id="progstat"></div-->
-          <div id="progress"></div>
+    <div class="loader"></div>
+    <div class="loader_logo" style="color: white; font: 100px; background-color: transparent; z-index: 0; height: 100vh; width: 100vw; position: fixed; display: flex; justify-content: center; align-items: center; opacity: 0;">
+        <div style="height: 200px; width: 200px; display: flex; justify-content: center; align-items: center;">
+            <div>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <img width="100px" src="assets/icononly_transparent_white_no_boundry.png" alt="logo">
+                </div>
+                <div style="color: #eee; font-size: 30px; font-weight: 500; font-family: 'Helvetica'; margin: 10px;">Monitoring</div>
+            </div>
         </div>
-      </div>
-      <!--div id="progressbar" style="color: white; font-weight: 600; font-size: 70pt;">Autonera</div-->
     </div>
 
-    <main class="autonera autonera-main layout">
-      <a href="" class="logo__new">
-        <div class="logo__pic">
-            <img src="assets/icononly_transparent_white_no_boundry_with_name.svg" alt="" class="mix__blend pic">
-        </div>
-      </a>
+
+    <div class="custom-cursor"></div>
+    
+
+    <a href="/index.html" class="logo__new">
+      <div class="logo__pic">
+          <img src="assets/icononly_transparent_white_no_boundry_with_name.svg" alt="" class="mix__blend pic">
+      </div>
+    </a>
+    <a href="/" class="translate mix__blend">
+      العربية
+    </a>
+    <div class="btn_wrapper mix__blend">
       <a href="javascript:;" title="" class="btn mix__blend">
           <span></span>
           <span></span>
       </a>
+    </div>
+
+
+    <main data-barba="container" data-barba-namespace="home">
+      <div class="autonera autonera-main layout main_page_overflow">
+      <link rel="stylesheet" type="text/css" href="css/mainPageScroll.css" />
+ 
+      <div id="loading">
+        <div class="loadingWrapper">
+          <div class="loadingImage">  
+            <img id="loading-image" src="assets/icononly_transparent_white_no_boundry_with_name.svg" alt="Loading..." />
+          </div>
+  
+          <div id="overlay">
+            <!--div id="progstat"></div-->
+            <div id="progress"></div>
+          </div>
+        </div>
+        <!--div id="progressbar" style="color: white; font-weight: 600; font-size: 70pt;">Autonera</div-->
+      </div>
+
+      <script>
+        function bookVisit() {
+          document.getElementById("contact_us_text").style.fontSize = '10px';
+          document.getElementById("contact_us_text").innerHTML = "Book a visit with us";
+
+        }
+
+        function returnText() {
+          document.getElementById("contact_us_text").style.fontSize = '15px';
+          document.getElementById("contact_us_text").innerHTML = "Free visit";
+
+        }
+
+      </script>
 
       <div class="copy__right mix__blend">
         © 2022 Autonera
       </div>
-      <div class="contact_us">
-        Contact us
-      </div>
-
-      <div class="custom-cursor"></div>
+      <a href="samplePage.html" onmouseover="bookVisit()" onmouseout="returnText()" class="contact_us">
+        <div id="contact_us_text" class="contact_us_text">
+          Free visit
+        </div>
+      </a>
 
       <div class="menu">
           <ul class="menu__list">
               <li class="menu__item">
-                  <a href="#" title="" class="menu__link">Home</a>
+                  <a href="/" title="" class="menu__link">Home</a>
               </li>
               <li class="menu__item">
-                  <a href="#" title="" class="menu__link">Solutions</a>
+                  <a href="samplepage.html" title="" class="menu__link">Solutions</a>
               </li>
               <li class="menu__item">
-                  <a href="#" title="" class="menu__link">Services</a>
+                  <a href="samplepage.html" title="" class="menu__link">Services</a>
               </li>
               <li class="menu__item">
-                  <a href="#" title="" class="menu__link">About</a>
+                  <a href="samplepage.html" title="" class="menu__link">About</a>
               </li>
               <li class="menu__item">
-                  <a href="#" title="" class="menu__link">Contact</a>
+                  <a href="samplepage.html" title="" class="menu__link">Contact</a>
               </li>
               <li class="menu__item">
-                  <a href="#" title="" class="menu__link">العربية</a>
+                  <a href="samplepage.html" title="" class="menu__link">العربية</a>
               </li>
           </ul>
       </div>
@@ -117,11 +162,21 @@
       <div id="mask" style="overscroll-behavior: none;">
         <nav>
           <ul class="vertical__nav">
-            <li data-section="0" id="data_section_0" class="data_section"></li>
-            <li data-section="1" id="data_section_1" class="data_section"></li>
-            <li data-section="2" id="data_section_2" class="data_section"></li>
-            <li data-section="3" id="data_section_3" class="data_section"></li>
-            <li data-section="4" id="data_section_4" class="data_section"></li>
+            <div class="navbar_click_area">
+              <li data-section="0" id="data_section_0" class="data_section"></li>
+            </div>
+            <div class="navbar_click_area">
+              <li data-section="1" id="data_section_1" class="data_section"></li>
+            </div>
+            <div class="navbar_click_area">
+              <li data-section="2" id="data_section_2" class="data_section"></li>
+            </div>
+            <div class="navbar_click_area">
+              <li data-section="3" id="data_section_3" class="data_section"></li>
+            </div>
+            <div class="navbar_click_area">
+              <li data-section="4" id="data_section_4" class="data_section"></li>
+            </div>
           </ul>
         </nav>
 
@@ -151,7 +206,12 @@
                     
                     <div class="autonera-section2__flex1 layout">
                       <div class="autonera-section2__flex1-item">
-                        <img src="assets/63136b0123bcd0e8be1de15f9d7cf41e.png" alt="" class="autonera-section2__image3 imageTwo layout" />
+                        <!--img src="assets/63136b0123bcd0e8be1de15f9d7cf41e.png" alt="" class="autonera-section2__image3 imageTwo layout" /-->
+                        <video class="autonera-section2__image3 imageTwo layout" loop autoplay muted >
+                          <source src="assets/148116867_main_xxl.mp4" type="video/mp4">
+                          <!--source src="movie.ogg" type="video/ogg"-->
+                        Your browser does not support the video tag.
+                        </video>
                       </div>
                       <div class="autonera-section2__flex1-spacer"></div>
                       <div class="autonera-section2__flex1-item">
@@ -172,14 +232,14 @@
                           <h1 class="autonera-section3__hero-title2 subtitleTwo layout">
                             We take over monotonous tasks so you can focus on more important responsibilities.
                           </h1>
-                          <div class="autonera-section3__flex3 layout subtitleTwo">
+                          <a href="samplePage.html" class="autonera-section3__flex3 layout subtitleTwo">
                             <h1 class="autonera-section3__hero-title3 layout">Learn more</h1> 
                             <div class="autonera-section3__flex3-item arrow__wrapper">
                               <div class="arrow__wrapper">
                                 <i class="material-icons arrow">arrow_forward</i>
                               </div>
                             </div>
-                          </div></div
+                          </a></div
                       ></px-posize>
                       </div>
                     </div>
@@ -206,14 +266,14 @@
                             <h1 class="autonera-section3__hero-title2 subtitleThree layout">
                               Keep an eye on your operations instantaneously whenever and wherever you go.
                             </h1>
-                            <div class="autonera-section3__flex3 layout subtitleThree">
+                            <a class="autonera-section3__flex3 layout subtitleThree">
                               <h1 class="autonera-section3__hero-title3 layout">Learn more</h1>
                               <div class="autonera-section3__flex3-item arrow__wrapper">
                                 <div class="arrow__wrapper">
                                   <i class="material-icons arrow" >arrow_forward</i>
                                 </div>
                               </div>
-                            </div></div
+                            </a></div
                         ></px-posize>
                       </div>
                       <div class="autonera-section3__flex4-spacer"></div>
@@ -248,14 +308,14 @@
                           <h1 class="autonera-section3__hero-title2 subtitleFour layout">
                             We assess  and analyze your operations to tailor optimum solutions that best suit you.
                           </h1>
-                          <div class="autonera-section3__flex3 layout subtitleFour">
+                          <a class="autonera-section3__flex3 layout subtitleFour">
                             <h1 class="autonera-section3__hero-title3 layout">Learn more</h1>
                             <div class="autonera-section3__flex3-item arrow__wrapper">
                               <div class="arrow_wrapper">
                                 <i class="material-icons arrow">arrow_forward</i>
                               </div>
                             </div>
-                          </div></div
+                          </a></div
                       ></px-posize>
                       </div>
                     </div>
@@ -274,9 +334,9 @@
                           <div class="autonera-section5__flex12 layout">
                             <h3 class="autonera-section5__subtitle1-box layout">
                               <pre class="autonera-section5__subtitle1">
-            info@autonera.com
-            +966 58 232 6172</pre
-                              >
+                                <a href="mailto:info@autonera-sa.com" class="remove_decoration">info@autonera-sa.com</a>
+                                <a href="tel: +966582326172" class="remove_decoration">+966 58 232 6172</a>
+                              </pre>
                             </h3>
                             <h3 class="autonera-section5__subtitle11-box layout">
                               <pre class="autonera-section5__subtitle1">
@@ -300,7 +360,6 @@
                   <!-- ======= End section5 ======= --> 
         </div>
       </div>  
-    </main>
 
     
     <script type="text/javascript">
@@ -352,15 +411,19 @@
       }());
     </script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 
-    <script src="scrollTrigger.js"></script>
-    <script src="navbar.js"></script>
-    <script src="mainPageScroll.js"></script>
-    <script src="clientPageScroll.js"></script>
+    </div>
+  </main>
     
-    <script src="customCursor.js"></script>
-   
+
+  <script src="animateSecondaryPage.js"></script>
+  <script src="scrollTrigger.js"></script>
+  <script src="navbar.js"></script>
+
+  <script src="customCursor.js"></script>
+
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+   <script src="barba.js" defer></script>
 </body>
 </html>

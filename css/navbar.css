@@ -13,13 +13,35 @@ body {
 }
 */
 .btn {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    z-index: 2;
     display: flex;
     width: 20px;
     height: 20px;
+}
+
+.btn_wrapper {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    height: 70px;
+    width: 70px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+
+.translate {
+    padding-top: 5px;
+    position: absolute;
+    top: 25px;
+    right: 90px;
+    height: 70px;
+    width: 70px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
 }
 
 .copy__right {
@@ -36,18 +58,37 @@ body {
     position: absolute;
     bottom: 5%;
     right: 5%;
-    color: white;
+    color: #111;
     z-index: 2;
     padding: 15px 25px;
     border: 2px solid #fff;
     font-weight: 700;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    vertical-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
     /*cursor: pointer;*/
+}
+
+.contact_us_text {
+    text-align: center;
 }
 
 .contact_us:hover {
     background-color: #fff;
     color: #171717;
-    transition: 0.5s;
+    transition: 1s;
+    /*transform: scaleX(1.8);*/
+    width: 140px;
+    border-radius: 0;
+    height: 50px;
+    background-color: transparent;
+    color: #fff;
 }
 
 .logo__new {
@@ -160,4 +201,14 @@ body {
 
 .pic {
     max-width: 100%;
+}
+
+.navbar_click_area {
+    height: 30px; 
+    width: 30px; 
+    border-radius: 30px; 
+    background-color: transparent; 
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
 }

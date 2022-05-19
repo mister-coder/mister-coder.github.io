@@ -1,5 +1,6 @@
 * {
   cursor: none;
+  text-decoration: none;
 }
 
 .autonera-main {
@@ -8,8 +9,9 @@
   background-color: #111111; }
 
 .autonera-main.layout {
-  /*position: relative;*/ /* Test this again with absolute. The default is absolute. */
-  overflow: hidden; }
+  position: inherit; /* Test this again with absolute. The default is absolute. */
+  overflow: hidden;
+  min-height: 100vh; }
 
 .autonera-section1__section1 {
   display: flex;
@@ -1522,4 +1524,31 @@
 .autonera-section4__flex7 {
   padding-right: 60px;
 
+}
+
+.remove_decoration {
+  color: inherit;
+}
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 200vh;
+  pointer-events: none;
+  background-color: #111;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main_page_overflow {
+  overflow: hidden;
+  display: flex; 
+  flex-direction: column
+}
+
+.secondary_page_overflow {
+  overflow: auto;
+  display: flex; 
+  flex-direction: column
 }
