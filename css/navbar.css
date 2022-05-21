@@ -32,7 +32,7 @@ body {
 
 .translate {
     padding-top: 5px;
-    position: absolute;
+    position: fixed;
     top: 25px;
     right: 90px;
     height: 70px;
