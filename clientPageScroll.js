@@ -100,10 +100,11 @@ if(window.location.pathname == '/' || window.location.pathname == '/index.html')
 
     window.addEventListener('DOMMouseScroll', wheel, false); //desktop
     window.addEventListener('mousewheel', wheel, false); //desktop
+    document.addEventListener('mousewheel', wheel, false); //desktop
     /*window.addEventListener('touchstart', wheelstart, false);
     window.addEventListener('touchmove', wheelmove, false);*/
     
-    window.onmousewheel = document.onmousewheel = wheel;
+    //window.onmousewheel = document.onmousewheel = wheel;
 
 })(window, document, leScroll);// ignore:line
 
