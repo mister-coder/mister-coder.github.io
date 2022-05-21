@@ -28,21 +28,23 @@ if(window.location.pathname == '/' || window.location.pathname == '/index.html')
 
     var wheel2 = function(event) {
         var st = window.pageYOffset || document.documentElement.scrollTop;
-
+/*
         if(st > lastScrollTop) {
             mousewheelHandle(0);
+            alert('down');
         } else {
             mousewheelHandle(1);
+            alert('up');
         }
-
-        lastScrollTop = st <= 0 ? 0 : st;
+*/
+        lastScrollTop = st <= 0 ? alert('up') : alert('down');
     }
-
+/*
     var lastY;
 
     var currentY;
 
-    /*
+    
     var wheelstart = function(e) {
         var currentY = e.originalEvent.touches[0].clientY;
         lastY = currentY;
