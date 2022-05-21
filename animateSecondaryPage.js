@@ -1,5 +1,5 @@
 
-if(window.location.pathname != '/' && window.location.pathname != '/index.html') {
+
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: ".page-section2__section2",
@@ -39,4 +39,3 @@ if(window.location.pathname != '/' && window.location.pathname != '/index.html')
           });
           tl4.from(".page-section3__flex4-item", {y: 200, opacity: 0, duration: 2});
           tl4.from(".page-section3__image", {y: 200, opacity: 0, duration: 2, delay: -2});
-}

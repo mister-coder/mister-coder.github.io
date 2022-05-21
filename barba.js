@@ -46,15 +46,29 @@ function init(){
         document.querySelector('html').classList.add('is-transitioning');
         barba.wrapper.classList.add('is-animating');
 
+    });*/
+    
+    barba.hooks.afterLeave(() => {
+        let count = 0;
+        let triggers = ScrollTrigger.getAll();
+        triggers.forEach(function (trigger) {
+            count += 1;
+            trigger.kill();
+        });
+        console.log(count + ' ST killed');
     });
 
     // do something after the transition finishes
-    barba.hooks.after(() => {
+    barba.hooks.after((data) => {
 
-        document.querySelector('html').classList.remove('is-transitioning');
-        barba.wrapper.classList.remove('is-animating');
+        setupScrollTriggers();
+        gsap.delayedCall(0.01, () =>
+          ScrollTrigger.getAll().forEach((t) =>
+            console.log('ST available for', t.vars.id, 'on', data.next.namespace)
+          )
+        );
 
-    });*/
+    });
 
     // scroll to the top of the page
     barba.hooks.enter(() => {
@@ -94,6 +108,7 @@ function init(){
     }
 
     barba.init({
+        debug: true,
         transitions: [{
             async leave() {
                 await loaderIn();
@@ -120,4 +135,64 @@ function init(){
 
 window.addEventListener('load', function(){
     init();
+    
+    setupScrollTriggers();
+    gsap.delayedCall(0.01, () =>
+      ScrollTrigger.getAll().forEach((t) =>
+        console.log(
+          'ST available for',
+          t.vars.id,
+          'on',
+          document.querySelector('#intro').getAttribute('data-barba-namespace')
+        )
+      )
+    );
 });
+
+function setupScrollTriggers() {
+    if(window.location.pathname != '/' && window.location.pathname != '/index.html') {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".page-section2__section2",
+                start: "top bottom",
+                toggleActions: "restart none none none"
+            }
+        });
+
+        tl.from(".page-section2__hero-title", {y: 200, opacity: 0, duration: 1.5})
+        tl.from(".page-section2__medium-title", {y: 200, opacity: 0, duration: 1.5, delay: -1.1});
+        
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".page-section2__medium-title",
+                start: "bottom bottom",
+                toggleActions: "restart none none none"
+            }
+        });
+
+        tl2.from(".img1", {x: -200, opacity: 0, duration: 1.5});
+        tl2.from(".page-section2__medium-title1", {x: 200, opacity: 0, duration: 1.5, delay: -1.5});
+        
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".page-section2__flex2",
+                start: "bottom bottom",
+                toggleActions: "restart none none none"
+            }
+        });
+
+        tl3.from(".img2", {x: 200, opacity: 0, duration: 1.5});
+        tl3.from(".page-section2__medium-title2", {x: -200, opacity: 0, duration: 1.5, delay: -1.5});
+        
+        const tl4 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".page-section3__section3",
+                start: "top bottom",
+                toggleActions: "restart none none none"
+            }
+        });
+
+        tl4.from(".page-section3__flex4-item", {y: 200, opacity: 0, duration: 2});
+        tl4.from(".page-section3__image", {y: 200, opacity: 0, duration: 2, delay: -2});
+    }
+}
