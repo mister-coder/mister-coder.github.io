@@ -51,7 +51,21 @@ body {
     color: white;
     z-index: 2;
     font-size: 0.8rem;
-    font-weight: 700;
+    /* font-weight: 700; */
+}
+
+.profile__download {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    color: white;
+    z-index: 2;
+    font-size: 0.8rem;
+    /* font-weight: 700; */
+    width: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .contact_us {
@@ -60,12 +74,12 @@ body {
     right: 5%;
     color: #111;
     z-index: 2;
-    padding: 15px 25px;
+    padding: 45px 45px;
     border: 2px solid #fff;
     font-weight: 700;
     border-radius: 100px;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     text-align: center;
     vertical-align: center;
     display: flex;
@@ -84,7 +98,7 @@ body {
     color: #171717;
     transition: 1s;
     /*transform: scaleX(1.8);*/
-    width: 140px;
+    width: 240px;
     border-radius: 0;
     height: 50px;
     background-color: transparent;
@@ -100,6 +114,10 @@ body {
     display: flex;
     width: 70px;
     height: 70px;
+}
+
+#ara__logo__new {
+    right: 144px;
 }
 
 .btn span {
@@ -137,7 +155,7 @@ body {
 }
 
 .menu {
-    background: #171717;
+    background: #fff;
     display: flex;
     align-items: center;
     position: fixed;
@@ -167,10 +185,34 @@ body {
     display: inline-flex;
     font-weight: bold;
     font-size: 30px;
-    color: #fff;
+    color: #17202a;
     text-decoration: none;
     text-transform: uppercase;
 }
+@media (max-width: 1199px) {
+  .menu__link {
+    font-size: 30px;
+     } }
+@media (max-width: 991px) {
+  .menu__link {
+    font-size: 30px;
+     } }
+@media (max-width: 767px) {
+  .menu__link {
+    font-size: 23px;
+     } }
+@media (max-width: 575px) {
+  .menu__link {
+    font-size: 18px;
+     } }
+@media (max-width: 479px) {
+  .menu__link {
+    font-size: 13px;
+     } }
+@media (max-width: 383px) {
+  .menu__link {
+    font-size: 10px;
+     } }
 
 .menu__link:after {
     content: '';
@@ -196,7 +238,37 @@ body {
 .logo__pic {
     width: 5vw;
     max-width: 150px;
+    min-width: 95px;
+}
+@media (max-width: 1199px) {
+  .logo__pic {
+    min-width: 90px;
+    } 
+}
+@media (max-width: 991px) {
+  .logo__pic {
+    min-width: 85px;
+    } 
+}
+@media (max-width: 767px) {
+  .logo__pic {
+    min-width: 80px;
+    } 
+}
+@media (max-width: 575px) {
+  .logo__pic {
+    min-width: 75px;
+    } 
+}
+@media (max-width: 479px) {
+  .logo__pic {
     min-width: 70px;
+    } 
+}
+@media (max-width: 383px) {
+  .logo__pic {
+    min-width: 70px;
+    } 
 }
 
 .pic {
@@ -211,4 +283,21 @@ body {
     margin: 5px 0;
     display: flex;
     justify-content: center;
+}
+
+.ara__lang {
+    width: 80px;
+}
+
+.ara__learn {
+    display: flex;
+    justify-content: center;
+}
+
+.ara_arrow {
+    margin-right: -100px;
+}
+
+.ara {
+    text-align: right;
 }

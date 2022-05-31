@@ -1,8 +1,12 @@
-if(window.location.pathname == '/' || window.location.pathname == '/index.html') { 
+if(window.location.pathname == '/' 
+    || window.location.pathname == '/index.html'
+    || window.location.pathname == '/arabic.html') { 
 (function (window, document, leScroll, undefined) {
 	'use strict';
 
     var listItems = document.getElementsByTagName('li');
+
+	let lastScrollTop = 0;
 
 	var keyCodes = {
 		up: 38,
@@ -37,7 +41,7 @@ if(window.location.pathname == '/' || window.location.pathname == '/index.html')
             //alert('up');
         }
 
-        //lastScrollTop = st <= alert('down') ? alert('up') : alert('down');
+        lastScrollTop = st <= 0 ? 0 : st;
     }
 /*
     var lastY;
@@ -61,6 +65,7 @@ if(window.location.pathname == '/' || window.location.pathname == '/index.html')
     }
 */
     var mousewheelHandle = function(delta) {
+        // alert('moving');
         if(leScroll.scrolling) {
             return;
         }
@@ -97,12 +102,32 @@ if(window.location.pathname == '/' || window.location.pathname == '/index.html')
             leScroll.move();
     });
 
-	var lastScrollTop = 0;
-    window.addEventListener("scroll", wheel2, false);
+    window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+        var st = window.pageYOffset || document.documentElement.scrollTop; 
+        if (st > lastScrollTop){
+           // downscroll code
+        //    alert('down');
+           mousewheelHandle(0);
+           console.log(1);
+           
+        } else {
+           // upscroll code
+        //    alert('up');
+           mousewheelHandle(1);
+           console.log(2);
+        }
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+     }, false);
 
+     document.addEventListener('swiped-up', function(e) {
+        console.log(e.target); // the element that was swiped
+    });
     window.addEventListener('DOMMouseScroll', wheel, false); //desktop
     window.addEventListener('mousewheel', wheel, false); //desktop
     document.addEventListener('mousewheel', wheel, false); //desktop
+
+
+
     /*window.addEventListener('touchstart', wheelstart, false);
     window.addEventListener('touchmove', wheelmove, false);*/
     

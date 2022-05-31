@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="css/navbar.css" />
     <link rel="stylesheet" type="text/css" href="css/customcursor.css" />
     <link rel="stylesheet" type="text/css" href="css/customscroll.css" />
+    <link rel="stylesheet" type="text/css" href="css/formloader.css" />
 
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
@@ -81,61 +82,69 @@
 
   <body data-barba="wrapper">
 
-      <div class="loader"></div>
-      <div class="loader_logo" style="color: white; font: 100px; background-color: transparent; z-index: 0; height: 100vh; width: 100vw; position: fixed; display: flex; justify-content: center; align-items: center; opacity: 0;">
-          <div style="height: 200px; width: 200px; display: flex; justify-content: center; align-items: center;">
-              <div>
-                  <div style="display: flex; align-items: center; justify-content: center;">
-                      <img width="100px" src="assets/icononly_transparent_white_no_boundry.png" alt="logo">
-                  </div>
-                  <div style="color: #eee; font-size: 30px; font-weight: 500; font-family: 'Helvetica'; margin: 10px;">Monitoring</div>
-              </div>
-          </div>
-      </div>
-
-      <div class="custom-cursor"></div>
-      
-      <a href="/index.html" class="logo__new">
-        <div class="logo__pic">
-            <img src="assets/icononly_transparent_white_no_boundry_with_name.svg" alt="" class="mix__blend pic">
+    <div class="loader"></div>
+    <div class="loader_logo" style="color: white; font: 100px; background-color: transparent; z-index: 0; height: 100vh; width: 100vw; position: fixed; display: flex; justify-content: center; align-items: center; opacity: 0;">
+        <div style="height: 200px; width: 200px; display: flex; justify-content: center; align-items: center;">
+            <div>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <img width="100px" src="assets/fulllogo_transparent_nobuffer.png" alt="logo">
+                </div>
+                <div style="color: #eee; font-size: 30px; font-weight: 500; font-family: 'Helvetica'; margin: 10px;"></div>
+            </div>
         </div>
-      </a>
-      <a href="/" class="translate mix__blend">
-        العربية
-      </a>
-      <div class="btn_wrapper mix__blend">
-        <a href="javascript:;" title="" class="btn mix__blend">
-            <span></span>
-            <span></span>
-        </a>
-      </div>
+    </div>
 
       <main id="intro" data-barba="container" data-barba-namespace="samplePage">
+
+        <div class="custom-cursor"></div>
+       
+
+        <a href="/index.html" class="logo__new">
+          <div class="logo__pic">
+              <img src="assets/fulllogo_transparent_nobuffer.png" alt="" class="mix__blend pic">
+          </div>
+        </a>
+        <a href="arabic.html" class="translate mix__blend">
+          العربية
+        </a>
+        <div class="btn_wrapper mix__blend">
+          <a href="javascript:;" title="" class="btn mix__blend">
+              <span></span>
+              <span></span>
+          </a>
+        </div>
+
+
       <div class="page page-main layout secondar_page_oveflow" >
         <!--link rel="stylesheet" type="text/css" href="css/mainPageScroll.css" /-->
 
         <div class="menu">
-            <ul class="menu__list">
-                <li class="menu__item">
-                    <a href="#" title="" class="menu__link">Home</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" title="" class="menu__link">Solutions</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" title="" class="menu__link">Services</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" title="" class="menu__link">About</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" title="" class="menu__link">Contact</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" title="" class="menu__link">العربية</a>
-                </li>
-            </ul>
-        </div>
+          <ul class="menu__list">
+              <li class="menu__item">
+                  <a href="/index.html" title="" class="menu__link">Home</a>
+              </li>
+              <li id="solutions" class="menu__item">
+                  <div href="samplepage.html" title="" class="menu__link">Solutions</div>
+              </li>
+              <!-- <li id="services" onclick="menuHover('services')" class="menu__item"> -->
+              <li id="services" class="menu__item">
+                  <div href="samplepage.html" title="" class="menu__link">Services</div>
+              </li>
+              <li class="menu__item">
+                  <a href="/about.html" title="" class="menu__link">About</a>
+              </li>
+              <li class="menu__item">
+                  <a href="contactUs.html" title="" class="menu__link">Contact</a>
+              </li>
+              <li class="menu__item">
+                  <a href="arabic.html" title="" class="menu__link">العربية</a>
+              </li>
+          </ul>
+          <ul id="sub__menu" class="menu__list" style="margin: 0 0 0 30px;">
+          </ul>
+          <ul id="sub__sub__menu" class="menu__list" style="margin: 0 0 0 30px; color: white;">
+          </ul>
+      </div>
         <!-- ======= section1 ======= --> 
         <div style="height: 100px;">
           
@@ -145,27 +154,50 @@
         <section class="page-section2__section2 layout">
           <div class="page-section2__flex1 layout">
             <h1 class="form-section2__hero-title layout">Contact us</h1>
-            <div class="form__container">
-              <form action="/action_page.php">
-                 <div class="name__wrapper">
+            <div id="form_container" class="form__container">
+              <div >
+                 <div class=""> <!-- name__wrapper -->
                     <div class="div__name">
                        <label for="fname">First Name <span class="important">*</span></label>
-                       <input type="text" id="fname" name="firstname" placeholder="First name">
+                       <div id="fname__error" class="error"></div>
+                       <input type="text" id="fname" min="3" max="30" name="firstname" placeholder="First name">
                     </div>
                     <div class="div__name">
                        <label for="lname">Last Name</label>
+                       <div id="lname__error" class="error"></div>
                        <input type="text" id="lname" name="lastname" placeholder="Last name">
                     </div>
                  </div>
             
-                <label for="lname">Email <span class="important">*</span></label>
-                <input type="text" id="lname" name="lastname" placeholder="Email">
+                <label for="company">Company name <span class="important">*</span></label>
+                       <div id="company__error" class="error"></div>
+                <input type="text" id="company" name="company_name" placeholder="Company name">
+                 
+                <label for="email">Company email <span class="important">*</span></label>
+                       <div id="email__error" class="error"></div>
+                <input type="email" id="email" name="email" placeholder="Company email">
+                
+                <label for="number">Contact number <span class="important">*</span></label>
+                       <div id="number__error" class="error"></div>
+                <input type="number" id="number" name="number" placeholder="Contact number">
+              
+                <label for="sector">Select the sector you want to want to inquire about: <span class="important">*</span></label>
+                       <div id="sector__error" class="error"></div>
+                <select id="sector" name="sector">
+                  <option value="other">Other</option>
+                  <option value="medical">Medical</option>
+                  <option value="industrial">Industrial</option>
+                  <option value="logistics">Logistics</option>
+                </select>
+
+                <label for="subject">Subject <span class="important">*</span></label>
+                <div id="subject__error" class="error"></div>
+                <textarea id="subject" name="subject" placeholder="State the reason for your inquiry." style="height:200px"></textarea>
             
-                <label for="subject">Message <span class="important">*</span></label>
-                <textarea id="subject" name="subject" placeholder="Message" style="height:200px"></textarea>
-            
-                <input type="submit" value="Submit">
-              </form>
+                <a id="submit" onclick="submit(event)">Submit</a>
+                <!-- <input type="submit" value="Submit" onclick="submit()"> -->
+              </div>
+
             </div>
           </div>
         </section>
@@ -255,9 +287,12 @@
     </div>
       </main>
 
+      <!-- <script src="hamburgerMenu.js"></script> -->
       <script src="animateSecondaryPage.js"></script>
       <script src="scrollTrigger.js"></script>
       <script src="navbar.js"></script>
+      <script src="contactUs.js"></script>
+      <script src="menu.js"></script>
 
       <script src="customCursor.js"></script>
       

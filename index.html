@@ -35,8 +35,8 @@
     <meta name="twitter:label1" content="Est. reading time" />
     <meta name="twitter:data1" content="2 minutes" />
 
-    <link rel="icon" href="assets/icononly_transparent_black.ico" sizes="32x32" />
-    <link rel="icon" href="assets/icononly_transparent_black.ico" sizes="192x192" />
+    <link rel="icon" href="assets/icononly_transparent_nobuffer_5Dx_icon.ico" sizes="32x32" />
+    <link rel="icon" href="assets/icononly_transparent_nobuffer_5Dx_icon.ico" sizes="192x192" />
 
     <link
       rel="stylesheet"
@@ -54,6 +54,7 @@
     <link rel="stylesheet" type="text/css" href="css/customscroll.css" />
     <link rel="stylesheet" type="text/css" href="css/navbar.css" />
     <link rel="stylesheet" type="text/css" href="css/customcursor.css" />
+    <link rel="stylesheet" type="text/css" href="css/formloader.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -67,41 +68,41 @@
         <div style="height: 200px; width: 200px; display: flex; justify-content: center; align-items: center;">
             <div>
                 <div style="display: flex; align-items: center; justify-content: center;">
-                    <img width="100px" src="assets/icononly_transparent_white_no_boundry.png" alt="logo">
+                    <img width="100px" src="assets/fulllogo_transparent_nobuffer.png" alt="logo">
                 </div>
-                <div style="color: #eee; font-size: 30px; font-weight: 500; font-family: 'Helvetica'; margin: 10px;">Monitoring</div>
+                <div style="color: #eee; font-size: 30px; font-weight: 500; font-family: 'Helvetica'; margin: 10px;"></div>
             </div>
         </div>
     </div>
 
 
-    <div class="custom-cursor"></div>
-    
 
-    <a href="/index.html" class="logo__new">
-      <div class="logo__pic">
-          <img src="assets/icononly_transparent_white_no_boundry_with_name.svg" alt="" class="mix__blend pic">
-      </div>
-    </a>
-    <a href="/" class="translate mix__blend">
-      العربية
-    </a>
-    <div class="btn_wrapper mix__blend">
-      <a href="javascript:;" title="" class="btn mix__blend">
-          <span></span>
-          <span></span>
+    <main id="intro" data-barba="container" data-barba-namespace="home">    
+      <div class="custom-cursor"></div>
+
+      <a href="/index.html" class="logo__new">
+        <div class="logo__pic">
+            <img src="assets/fulllogo_transparent_nobuffer.png" alt="" class="mix__blend pic hide__item">
+        </div>
       </a>
-    </div>
+      <a href="arabic.html" class="translate mix__blend">
+        العربية
+      </a>
+      <div class="btn_wrapper mix__blend">
+        <a href="javascript:;" title="" class="btn mix__blend">
+            <span></span>
+            <span></span>
+        </a>
+      </div>
 
 
-    <main id="intro" data-barba="container" data-barba-namespace="home">
       <div class="autonera autonera-main layout main_page_overflow">
       <link rel="stylesheet" type="text/css" href="css/mainPageScroll.css" />
  
       <div id="loading">
         <div class="loadingWrapper">
           <div class="loadingImage">  
-            <img id="loading-image" src="assets/icononly_transparent_white_no_boundry_with_name.svg" alt="Loading..." />
+            <img id="loading-image" src="assets/fulllogo_transparent_nobuffer.png" alt="Loading..." />
           </div>
   
           <div id="overlay">
@@ -112,54 +113,89 @@
         <!--div id="progressbar" style="color: white; font-weight: 600; font-size: 70pt;">Autonera</div-->
       </div>
 
+
+      <div class="copy__right mix__blend hide__item">
+        © <span id="this__year"></span> Autonera
+      </div>
+
+      <a href="/assets/Autonera-Pro.pdf" id="profile__download" class="profile__download mix__blend tooltip hide__item" download >
+        Profile Download
+      </a>
       <script>
+
+        document.getElementById('this__year').innerHTML = new Date().getFullYear();
+        var profileIcon = document.getElementById('profile__download');
+
+        function iconOrProfile() {
+          if(window.innerWidth < 575) {
+            profileIcon.innerHTML = '<i class="material-icons arrow">arrow_downward</i>'
+                                    +'<span class="tooltiptext">Download profile</span>';
+          } else if (window.innerWidth >= 575) {
+            profileIcon.innerHTML = 'Profile Download';
+          }
+        }
+        
+        window.addEventListener('resize', iconOrProfile);
+
+        iconOrProfile();
+
+      </script>
+
+      <a id="contact_us_text" href="contactUs.html" class="contact_us hide__item">
+        <div id="contact_us_text" class="contact_us_text">
+          Request a Free Visit
+        </div>
+      </a>
+      
+      <script>
+
+        document.getElementById('contact_us_text').addEventListener('mouseover', bookVisit);
+        document.getElementById('contact_us_text').addEventListener('mouseout', returnText);
+        
         function bookVisit() {
           document.getElementById("contact_us_text").style.fontSize = '15px';
-          document.getElementById("contact_us_text").innerHTML = "Book a visit with us";
+          document.getElementById("contact_us_text").innerHTML = "Book an inspection visit by one of our expert engineers";
 
         }
 
         function returnText() {
           document.getElementById("contact_us_text").style.fontSize = '15px';
-          document.getElementById("contact_us_text").innerHTML = "Free visit";
+          document.getElementById("contact_us_text").innerHTML = "Request a Free visit";
 
         }
 
       </script>
 
-      <div class="copy__right mix__blend">
-        © 2022 Autonera
-      </div>
-      <a href="samplePage.html" onmouseover="bookVisit()" onmouseout="returnText()" class="contact_us">
-        <div id="contact_us_text" class="contact_us_text">
-          Free visit
-        </div>
-      </a>
-
       <div class="menu">
           <ul class="menu__list">
               <li class="menu__item">
-                  <a href="/" title="" class="menu__link">Home</a>
+                  <a href="/index.html" title="" class="menu__link">Home</a>
+              </li>
+              <li id="solutions" class="menu__item">
+                  <div href="samplepage.html" title="" class="menu__link">Solutions</div>
+              </li>
+              <!-- <li id="services" onclick="menuHover('services')" class="menu__item"> -->
+              <li id="services" class="menu__item">
+                  <div href="samplepage.html" title="" class="menu__link">Services</div>
               </li>
               <li class="menu__item">
-                  <a href="samplepage.html" title="" class="menu__link">Solutions</a>
+                  <a href="/about.html" title="" class="menu__link">About</a>
               </li>
               <li class="menu__item">
-                  <a href="samplepage.html" title="" class="menu__link">Services</a>
+                  <a href="contactUs.html" title="" class="menu__link">Contact</a>
               </li>
               <li class="menu__item">
-                  <a href="samplepage.html" title="" class="menu__link">About</a>
+                  <a href="arabic.html" title="" class="menu__link">العربية</a>
               </li>
-              <li class="menu__item">
-                  <a href="samplepage.html" title="" class="menu__link">Contact</a>
-              </li>
-              <li class="menu__item">
-                  <a href="samplepage.html" title="" class="menu__link">العربية</a>
-              </li>
+          </ul>
+          <ul id="sub__menu" class="menu__list" style="margin: 0 0 0 30px;">
+          </ul>
+          <ul id="sub__sub__menu" class="menu__list" style="margin: 0 0 0 30px; color: white;">
           </ul>
       </div>
 
-      <div id="mask" style="overscroll-behavior: none;">
+
+      <div id="mask" >
         <nav>
           <ul class="vertical__nav">
             <div class="navbar_click_area">
@@ -181,7 +217,7 @@
         </nav>
 
 
-        <div id="containerSnapScroll" style="overscroll-behavior: none;">
+        <div id="containerSnapScroll" >
                     <!-- ======= section1 ======= --> 
       
                     <section
@@ -232,7 +268,7 @@
                           <h1 class="autonera-section3__hero-title2 subtitleTwo layout">
                             We take over monotonous tasks so you can focus on more important responsibilities.
                           </h1>
-                          <a href="samplePage.html" class="autonera-section3__flex3 layout subtitleTwo">
+                          <a href="industrial-automation.html" class="autonera-section3__flex3 layout subtitleTwo">
                             <h1 class="autonera-section3__hero-title3 layout">Learn more</h1> 
                             <div class="autonera-section3__flex3-item arrow__wrapper">
                               <div class="arrow__wrapper">
@@ -266,7 +302,7 @@
                             <h1 class="autonera-section3__hero-title2 subtitleThree layout">
                               Keep an eye on your operations instantaneously whenever and wherever you go.
                             </h1>
-                            <a class="autonera-section3__flex3 layout subtitleThree">
+                            <a href="monitoring.html" class="autonera-section3__flex3 layout subtitleThree">
                               <h1 class="autonera-section3__hero-title3 layout">Learn more</h1>
                               <div class="autonera-section3__flex3-item arrow__wrapper">
                                 <div class="arrow__wrapper">
@@ -308,7 +344,7 @@
                           <h1 class="autonera-section3__hero-title2 subtitleFour layout">
                             We assess  and analyze your operations to tailor optimum solutions that best suit you.
                           </h1>
-                          <a class="autonera-section3__flex3 layout subtitleFour">
+                          <a href="industrial-automation.html" class="autonera-section3__flex3 layout subtitleFour">
                             <h1 class="autonera-section3__hero-title3 layout">Learn more</h1>
                             <div class="autonera-section3__flex3-item arrow__wrapper">
                               <div class="arrow_wrapper">
@@ -346,7 +382,7 @@
             Saudi Arabia</pre
                               >
                             </h3>
-                            <pre style="display: none;" class="autonera-section5__subtitle layout copyright">Made in Saudi Arabia © 2022 Autonera</pre>
+                            <pre style="display: none;" class="autonera-section5__subtitle layout copyright">Made in Saudi Arabia © <span id="this__year-2"></span> Autonera</pre>
                           </div>
                         </div>
                         <div class="autonera-section5__flex11-spacer"></div>
@@ -366,8 +402,12 @@
       AOS.init();
     </script>
     <script>
-      window.onload = function(){ 
-        setTimeout(hideLoading, 2000);
+      document.getElementById('this__year-2').innerHTML = new Date().getFullYear();;
+
+      if(window.location.pathname == '/' || window.location.pathname == '/index.html') {
+        window.onload = function(){ 
+          setTimeout(hideLoading, 2000);
+        }
       }
 
       function hideLoading() {
@@ -375,50 +415,18 @@
       }
     </script>
 
-    <script>
-      ;(function(){
-        function id(v){ return document.getElementById(v); }
-        function loadbar() {
-          var ovrl = id("overlay"),
-              prog = id("progress"),
-              stat = id("progstat"),
-              img = document.images,
-              c = 0,
-              tot = img.length;
-          if(tot == 0) return doneLoading();
-
-          function imgLoaded(){
-            c += 1;
-            var perc = ((100/tot*c) << 0) +"%";
-            prog.style.width = perc;
-            //stat.innerHTML = "Loading "+ perc;
-            if(c===tot) return doneLoading();
-          }
-          function doneLoading(){
-            //ovrl.style.opacity = 0;
-            setTimeout(function(){ 
-              //ovrl.style.display = "none";
-            }, 1200);
-          }
-          for(var i=0; i<tot; i++) {
-            var tImg     = new Image();
-            tImg.onload  = imgLoaded;
-            tImg.onerror = imgLoaded;
-            tImg.src     = img[i].src;
-          }    
-        }
-        document.addEventListener('DOMContentLoaded', loadbar, false);
-      }());
-    </script>
     
 
     </div>
   </main>
     
 
+  <script src="hamburgerMenu.js"></script>
   <script src="animateSecondaryPage.js"></script>
   <script src="scrollTrigger.js"></script>
   <script src="navbar.js"></script>
+  <script src="contactUs.js"></script>
+  <script src="menu.js"></script>
 
   <script src="customCursor.js"></script>
 

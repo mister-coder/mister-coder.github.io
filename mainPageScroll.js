@@ -1,4 +1,7 @@
-if(window.location.pathname == '/' || window.location.pathname == '/index.html') {
+if(window.location.pathname == '/' 
+	|| window.location.pathname == '/index.html'
+	|| window.location.pathname == '/arabic.html'
+	) {
 	var leScroll = (function(leScroll) {
 		'use strict';
 
@@ -8,13 +11,27 @@ if(window.location.pathname == '/' || window.location.pathname == '/index.html')
 
 		var sectionCount = document.querySelectorAll('section').length - 1;
 		
-		var maskHeight = document.getElementById('mask').offsetHeight; 
+		var maskHeight = document.getElementById('mask').offsetHeight;
 			
 		var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 
 		leScroll.scrolling = false;
 
 			leScroll.move = function() {
+				if(currentSectionNumber == 4) {
+					let hideItems = document.getElementsByClassName('hide__item');
+					for (var i = 0; i < hideItems.length; i++) {
+						//console.log();
+						hideItems[i].style.display = 'none';
+					 }
+				} else if (currentSectionNumber < 4) {
+					let hideItems = document.getElementsByClassName('hide__item');
+					for (var i = 0; i < hideItems.length; i++) {
+						//console.log();
+						hideItems[i].style.display = 'block';
+					 }
+					 hideItems[3].style.display = 'flex';
+				}
 				if(iOS) {
 						document.getElementById('containerSnapScroll').style.top = '-' + (currentSectionNumber * maskHeight) + 'px';
 						
@@ -23,7 +40,11 @@ if(window.location.pathname == '/' || window.location.pathname == '/index.html')
     					//alert('scroll');
 
 						animateSection(previousSectionNumber, currentSectionNumber);
-					} else if(window.location.pathname == '/' || window.location.pathname == '/index.html') {
+					} else if(window.location.pathname == '/' 
+								|| window.location.pathname == '/index.html'
+								|| window.location.pathname == '/arabic.html'
+								) {
+									// alert('move');
 						document.getElementById('containerSnapScroll').style.top = '-' + (currentSectionNumber * window.innerHeight) + 'px';
 						
 						updateVerticalNavigation(currentSectionNumber);

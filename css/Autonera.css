@@ -9,7 +9,7 @@
   background-color: #111111; }
 
 .autonera-main.layout {
-  position: inherit; /* Test this again with absolute. The default is absolute. */
+  /* position: absolute; Test this again with absolute. The default is absolute. */
   overflow: hidden;
   min-height: 100vh; }
 
@@ -302,7 +302,7 @@
 
 .autonera-section2__hero-title2 {
   font: 500 35px/1.2 Helvetica, "Roboto", Arial, serif;
-  color: #959595;
+  color: #fff;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
     .autonera-section2__hero-title2 {
@@ -541,7 +541,7 @@
 
 .autonera-section3__hero-title2 {
   font: 500 35px/1.2 Helvetica, "Roboto", Arial, serif;
-  color: #959595;
+  color: #fff;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
     .autonera-section3__hero-title2 {
@@ -907,7 +907,7 @@
   margin-bottom: 0px;
   margin: 0px;
   font: 500 35px/1.2 Helvetica, "Roboto", Arial, serif;
-  color: #959595;
+  color: #fff;
   letter-spacing: 0px;
   white-space: pre-wrap; }
   @media (max-width: 1199px) {
@@ -1111,7 +1111,7 @@
   margin: 8px 0px 0px; }
   @media (max-width: 1199px) {
     .autonera-section5__hero-title-box.layout {
-      margin: 7px 0px 0px; } }
+      margin: 10px 0px 0px; } }
   @media (max-width: 991px) {
     .autonera-section5__hero-title-box.layout {
       margin: 6px 0px 0px; } }
@@ -1423,6 +1423,7 @@
 .autonera-section1__section1 {
   /*max-height: 100vh;*/
   min-height: 100vh;
+  max-height: 100vh;
   justify-content: center;
 }
 
@@ -1465,7 +1466,7 @@
   top: 0;
   left: 0;
   opacity: 1;
-  background-color: #111;
+  background-color: #fdfefe;
   z-index: 99;
 }
 
@@ -1487,7 +1488,7 @@
 
 #progress{
   height:1vw;
-  background:#fff;
+  background-image: linear-gradient(to right, #3525b3, #c11145);
   position:absolute;
   width:0;
   top:50%;
@@ -1535,7 +1536,7 @@
   width: 100vw;
   height: 200vh;
   pointer-events: none;
-  background-color: #111;
+  background-color: #fdfefe;
   z-index: 5;
   visibility: hidden;
   opacity: 0;
@@ -1551,4 +1552,28 @@
   overflow: auto;
   display: flex; 
   flex-direction: column
+}
+
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+#ara_details {
+  margin: 10px 0;
+  width: 100%;
 }
