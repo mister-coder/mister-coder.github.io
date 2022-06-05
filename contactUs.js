@@ -6,6 +6,7 @@ function submit(e) {
   var company = document.getElementById('company').value;
   var email = document.getElementById('email').value;
   var number = document.getElementById('number').value;
+  var city = document.getElementById('city').value;
   var sector = document.getElementById('sector').value;
   var subject = document.getElementById('subject').value;
   
@@ -20,6 +21,7 @@ function submit(e) {
   document.getElementById('company__error').innerHTML = '';
   document.getElementById('email__error').innerHTML = '';
   document.getElementById('number__error').innerHTML = '';
+  document.getElementById('city__error').innerHTML = '';
   document.getElementById('sector__error').innerHTML = '';
   document.getElementById('subject__error').innerHTML = '';
   
@@ -38,19 +40,38 @@ function submit(e) {
   } else if( typeof number !== 'string'|| number.length > 100 || number.length < 3 ) {
     document.getElementById('number__error').innerHTML = 'Invalid number';
     scrollTop();
+  } else if( (    
+                  city != 'other' 
+              &&  city != 'Jeddah' 
+              &&  city != 'Riyadh' 
+              &&  city != 'Makkah' 
+              &&  city != 'Madinah' 
+              &&  city != 'Dammam' 
+              &&  city != 'Taif' 
+              &&  city != 'Al-Kharj' 
+              &&  city != 'Khobar' 
+              &&  city != 'Tabuk' 
+              &&  city != 'Dhahran' 
+              ) ) {
+    document.getElementById('city__error').innerHTML = 'Invalid city';
+    scrollTop();
   } else if( ( sector != 'other' && sector != 'medical' && sector != 'industrial' && sector != 'logistics' ) ) {
     document.getElementById('sector__error').innerHTML = 'Invalid sector';
     scrollTop();
   } else if( typeof subject !== 'string'|| subject.length > 5000 || subject.length < 3 ) {
     document.getElementById('subject__error').innerHTML = 'Your message should be a string with between 3 and 5000 letters';
     scrollTop();
-  } else if(    typeof fName !== 'undefined' 
-      && typeof lName !== 'undefined' 
-      && typeof company !== 'undefined' 
-      && typeof email !== 'undefined' 
-      && typeof number !== 'undefined' 
-      && typeof sector !== 'undefined' 
-      && typeof subject !== 'undefined' ) {
+  } else if(      
+                  typeof fName !== 'undefined' 
+              &&  typeof lName !== 'undefined' 
+              &&  typeof company !== 'undefined' 
+              &&  typeof email !== 'undefined' 
+              &&  typeof number !== 'undefined' 
+              &&  typeof city !== 'undefined' 
+              &&  typeof sector !== 'undefined' 
+              &&  typeof subject !== 'undefined'
+              &&  typeof city !== 'undefined' 
+      ) {
 
       document.getElementById('form_container').innerHTML = '<div style="height: 200px; width: 100%; display: flex; justify-content: center; align-items: center;"><span class="loader2"></span></div>';
         //alert(sector);
@@ -62,6 +83,7 @@ function submit(e) {
                   company:company, 
                   email:email,
                   number:number,
+                  city:city,
                   sector:sector,
                   subject:subject,
                 },
@@ -87,6 +109,7 @@ function araSubmit(e) {
   var company = document.getElementById('company').value;
   var email = document.getElementById('email').value;
   var number = document.getElementById('number').value;
+  var city = document.getElementById('city').value;
   var sector = document.getElementById('sector').value;
   var subject = document.getElementById('subject').value;
   
@@ -101,6 +124,7 @@ function araSubmit(e) {
   document.getElementById('company__error').innerHTML = '';
   document.getElementById('email__error').innerHTML = '';
   document.getElementById('number__error').innerHTML = '';
+  document.getElementById('city__error').innerHTML = '';
   document.getElementById('sector__error').innerHTML = '';
   document.getElementById('subject__error').innerHTML = '';
   
@@ -119,6 +143,21 @@ function araSubmit(e) {
   } else if( typeof number !== 'string'|| number.length > 100 || number.length < 3 ) {
     document.getElementById('number__error').innerHTML = 'رقم غير صالح';
     scrollTop();
+  } else if( (    
+        city != 'other' 
+    &&  city != 'Jeddah' 
+    &&  city != 'Riyadh' 
+    &&  city != 'Makkah' 
+    &&  city != 'Madinah' 
+    &&  city != 'Dammam' 
+    &&  city != 'Taif' 
+    &&  city != 'Al-Kharj' 
+    &&  city != 'Khobar' 
+    &&  city != 'Tabuk' 
+    &&  city != 'Dhahran' 
+    ) ) {
+    document.getElementById('city__error').innerHTML = 'عذراً! هذه المدينة غير موجودة.';
+    scrollTop();
   } else if( ( sector != 'other' && sector != 'medical' && sector != 'industrial' && sector != 'logistics' ) ) {
     document.getElementById('sector__error').innerHTML = 'قطاع غير صالح';
     scrollTop();
@@ -130,6 +169,7 @@ function araSubmit(e) {
       && typeof company !== 'undefined' 
       && typeof email !== 'undefined' 
       && typeof number !== 'undefined' 
+      && typeof city !== 'undefined' 
       && typeof sector !== 'undefined' 
       && typeof subject !== 'undefined' ) {
 
@@ -143,6 +183,7 @@ function araSubmit(e) {
                   company:company, 
                   email:email,
                   number:number,
+                  city:city,
                   sector:sector,
                   subject:subject,
                 },

@@ -20,7 +20,7 @@ body {
 
 .btn_wrapper {
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: 20px;
     height: 70px;
     width: 70px;
@@ -33,15 +33,15 @@ body {
 .translate {
     padding-top: 5px;
     position: fixed;
-    top: 25px;
-    right: 90px;
+    top: 20px;
+    right: 100px;
     height: 70px;
     width: 70px;
     z-index: 2;
     display: flex;
     align-items: center;
     color: #fff;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .copy__right {
@@ -69,6 +69,7 @@ body {
 }
 
 .contact_us {
+    display: flex;
     position: absolute;
     bottom: 5%;
     right: 5%;
@@ -103,6 +104,7 @@ body {
     height: 50px;
     background-color: transparent;
     color: #fff;
+    display: flex;
 }
 
 .logo__new {
@@ -121,8 +123,8 @@ body {
 }
 
 .btn span {
-    width: 20px;
-    height: 2px;
+    width: 30px;
+    height: 3px;
     background: #fff;
     display: flex;
     position: absolute;
@@ -227,7 +229,7 @@ body {
 }
 
 .menu.is-active {
-    opacity: 1;
+    opacity: 0.8;
     visibility: visible;
 }
 
@@ -286,7 +288,7 @@ body {
 }
 
 .ara__lang {
-    width: 80px;
+    width: 100px;
 }
 
 .ara__learn {
@@ -300,4 +302,8 @@ body {
 
 .ara {
     text-align: right;
+}
+
+.data_section {
+    width: 2px;
 }

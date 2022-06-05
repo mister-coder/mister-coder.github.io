@@ -58,8 +58,8 @@
     <meta name="twitter:label1" content="Est. reading time" />
     <meta name="twitter:data1" content="2 minutes" />
     
-    <link rel="icon" href="assets/icononly_transparent_black.ico" sizes="32x32" />
-    <link rel="icon" href="assets/icononly_transparent_black.ico" sizes="192x192" />
+    <link rel="icon" href="assets/icononly_transparent_nobuffer_5Dx_icon.ico" sizes="32x32" />
+    <link rel="icon" href="assets/icononly_transparent_nobuffer_5Dx_icon.ico" sizes="192x192" />
     
     <link
       rel="stylesheet"
@@ -181,13 +181,29 @@
                        <div id="number__error" class="error"></div>
                 <input type="number" id="number" name="number" placeholder="Contact number">
               
+                <label for="city">City: <span class="important">*</span></label>
+                       <div id="city__error" class="error"></div>
+                <select id="city" name="city">
+                  <option value="Jeddah">Jeddah</option>
+                  <option value="Riyadh">Riyadh</option>
+                  <option value="Makkah">Makkah</option>
+                  <option value="Madinah">Madinah</option>
+                  <option value="Dammam">Dammam</option>
+                  <option value="Taif">Taif</option>
+                  <option value="Al-Kharj">Al-Kharj</option>
+                  <option value="Khobar">Khobar</option>
+                  <option value="Tabuk">Tabuk</option>
+                  <option value="Dhahran">Dhahran</option>
+                  <option value="other">Other</option>
+                </select>
+              
                 <label for="sector">Select the sector you want to want to inquire about: <span class="important">*</span></label>
                        <div id="sector__error" class="error"></div>
                 <select id="sector" name="sector">
-                  <option value="other">Other</option>
-                  <option value="medical">Medical</option>
                   <option value="industrial">Industrial</option>
+                  <option value="medical">Medical</option>
                   <option value="logistics">Logistics</option>
+                  <option value="other">Other</option>
                 </select>
 
                 <label for="subject">Subject <span class="important">*</span></label>

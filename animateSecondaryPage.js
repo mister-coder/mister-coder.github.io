@@ -7,8 +7,8 @@
               toggleActions: "restart none none none"
             }
           });
-          tl.from(".page-section2__hero-title", {y: 200, opacity: 0, duration: 1.5})
-          tl.from(".page-section2__medium-title", {y: 200, opacity: 0, duration: 1.5, delay: -1.1});
+          tl.from(".page-section2__hero-title", {y: 25, opacity: 0.9, duration: 1.5})
+          tl.from(".page-section2__medium-title", {y: 25, opacity: 0.9, duration: 1.5, delay: -1.1});
           
           const tl2 = gsap.timeline({
             scrollTrigger: {
@@ -18,7 +18,7 @@
             }
           });
           tl2.from(".img1", {x: -200, opacity: 0, duration: 1.5});
-          tl2.from(".page-section2__medium-title1", {x: 200, opacity: 0, duration: 1.5, delay: -1.5});
+          tl2.from(".page-section2__medium-title1", {x: 25, opacity: 0.9, duration: 1.5, delay: -1.5});
           
           const tl3 = gsap.timeline({
             scrollTrigger: {
@@ -28,7 +28,7 @@
             }
           });
           tl3.from(".img2", {x: 200, opacity: 0, duration: 1.5});
-          tl3.from(".page-section2__medium-title2", {x: -200, opacity: 0, duration: 1.5, delay: -1.5});
+          tl3.from(".page-section2__medium-title2", {x: -25, opacity: 0.9, duration: 1.5, delay: -1.5});
           
           const tl4 = gsap.timeline({
             scrollTrigger: {
@@ -37,5 +37,5 @@
               toggleActions: "restart none none none"
             }
           });
-          tl4.from(".page-section3__flex4-item", {y: 200, opacity: 0, duration: 2});
-          tl4.from(".page-section3__image", {y: 200, opacity: 0, duration: 2, delay: -2});
+          tl4.from(".page-section3__flex4-item", {y: 25, opacity: 0.9, duration: 2});
+          tl4.from(".page-section3__image", {y: 25, opacity: 0.9, duration: 2, delay: -2});

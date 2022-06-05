@@ -8,9 +8,12 @@
 
 
 html {
-    /* overscroll-behavior-y: none;
+    overscroll-behavior-y: none;
     overscroll-behavior: none;
-    -ms-scroll-chaining: none; */
+    -ms-scroll-chaining: none;
+    /* position: fixed; */
+    /* overflow: hidden; */
+    /* position: absolute; */
 }
 
 h1, h2, h3, h4, h5, h6, hr, p, figure {
@@ -39,9 +42,12 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* overscroll-behavior: none;
+    overscroll-behavior: none;
     -ms-scroll-chaining: none;
-    overscroll-behavior-y: none; */
+    overscroll-behavior-y: none;
+    /* position: fixed; */
+    /* overflow: hidden; */
+    /* position: absolute; */
 }
 
 code {

@@ -886,3 +886,7 @@ input[type=submit]:hover {
 .ara__align {
   text-align: right;
 }
+
+p.ara__align {
+  text-align: justify;
+}

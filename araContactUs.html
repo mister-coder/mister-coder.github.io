@@ -58,8 +58,8 @@
     <meta name="twitter:label1" content="Est. reading time" />
     <meta name="twitter:data1" content="2 minutes" />
     
-    <link rel="icon" href="assets/icononly_transparent_black.ico" sizes="32x32" />
-    <link rel="icon" href="assets/icononly_transparent_black.ico" sizes="192x192" />
+    <link rel="icon" href="assets/icononly_transparent_nobuffer_5Dx_icon.ico" sizes="32x32" />
+    <link rel="icon" href="assets/icononly_transparent_nobuffer_5Dx_icon.ico" sizes="192x192" />
     
     <link
       rel="stylesheet"
@@ -180,13 +180,29 @@
                        <div id="number__error" class="error"></div>
                 <input type="number" id="number" name="number" placeholder="رقم التواصل">
               
+                <label for="city">المدينة:<span class="important">*</span></label>
+                       <div id="city__error" class="error"></div>
+                <select id="city" name="city">
+                  <option value="Jeddah">جدة</option>
+                  <option value="Riyadh">الرياض</option>
+                  <option value="Makkah">مكة</option>
+                  <option value="Madinah">المدينة</option>
+                  <option value="Dammam">الدمام</option>
+                  <option value="Taif">الطائف</option>
+                  <option value="Al-Kharj">الخرج</option>
+                  <option value="Khobar">الخُبَر</option>
+                  <option value="Tabuk">تبوك</option>
+                  <option value="Dhahran">الظهران</option>
+                  <option value="other">آخر</option>
+                </select>
+              
                 <label for="sector">حدد القطاع الذي تريد الاستفسار عنه: <span class="important">*</span></label>
                        <div id="sector__error" class="error"></div>
                 <select id="sector" name="sector">
-                  <option value="other">آخر</option>
-                  <option value="medical">طبي</option>
                   <option value="industrial">صناعي</option>
+                  <option value="medical">طبي</option>
                   <option value="logistics">الخدمات اللوجستية</option>
+                  <option value="other">آخر</option>
                 </select>
 
                 <label for="subject">محتوى الرسالة: <span class="important">*</span></label>

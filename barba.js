@@ -15,12 +15,14 @@ function init(){
         return gsap.fromTo(loader, 
             {
                 scaleY: 0,
+                opacity:  0
             },
             { 
-                duration: 0.8,
+                duration: 0.9,
                 scaleY: 2, 
                 ease: 'Power4.inOut', 
-                transformOrigin: 'center top'
+                transformOrigin: 'center top',
+                opacity: 0.9
             });
             
     }
@@ -30,13 +32,15 @@ function init(){
         return gsap.fromTo(loader, 
             {
                 scaleY: 2,
-                transformOrigin: 'center bottom'
+                transformOrigin: 'center bottom',
+                opacity: 0.9
             },
             { 
-            duration: 0.8, 
+            duration: 0.9, 
             scaleY: 0,
             transformOrigin: 'center top', 
-            ease: 'Power4.inOut'
+            ease: 'Power4.inOut',
+            opacity: 0
         });
     }
 
@@ -55,7 +59,7 @@ function init(){
             count += 1;
             trigger.kill();
         });
-        console.log(count + ' ST killed');
+        // console.log(count + ' ST killed');
 
         //window.removeEventListener("scroll", wheel2, false);
     });
@@ -64,11 +68,11 @@ function init(){
     barba.hooks.after((data) => {
 
         setupScrollTriggers();
-        gsap.delayedCall(0.01, () =>
-          ScrollTrigger.getAll().forEach((t) =>
-            console.log('ST available for', t.vars.id, 'on', data.next.namespace)
-          )
-        );
+        // gsap.delayedCall(0.01, () =>
+        //   ScrollTrigger.getAll().forEach((t) =>
+        //     // console.log('ST available for', t.vars.id, 'on', data.next.namespace)
+        //   )
+        // );
 
     });
 
@@ -127,7 +131,7 @@ function init(){
                 
                 const done = this.async();
                 if(window.location.pathname == '/index.html' 
-                    || window.location.pathname == '') {
+                    || window.location.pathname == '/') {
                         await removeCover();
                         // console.log('hi');
                 }
@@ -143,21 +147,21 @@ window.addEventListener('load', function(){
     init();
     
     setupScrollTriggers();
-    gsap.delayedCall(0.01, () =>
-      ScrollTrigger.getAll().forEach((t) =>
-        console.log(
-          'ST available for',
-          t.vars.id,
-          'on',
-          document.querySelector('#intro').getAttribute('data-barba-namespace')
-        )
-      )
-    );
+    // gsap.delayedCall(0.01, () =>
+    //   ScrollTrigger.getAll().forEach((t) =>
+    //     console.log(
+    //       'ST available for',
+    //       t.vars.id,
+    //       'on',
+    //       document.querySelector('#intro').getAttribute('data-barba-namespace')
+    //     )
+    //   )
+    // );
 });
 
 function setupScrollTriggers() {
   //console.clear();
-    console.log('hi there ' + (new Date()).toTimeString().split(' ')[0]);
+    // console.log('hi there ' + (new Date()).toTimeString().split(' ')[0]);
         var cursor = document.querySelector(".custom-cursor");
         var links = document.querySelectorAll("a");
         var initCursor = false;
@@ -233,6 +237,17 @@ function setupScrollTriggers() {
             function hideLoading() {
               document.getElementById("loading").style.display = "none";
             }
+
+            
+          var video = document.getElementById("myVideo");
+          video.play();
+
+        }
+
+        if(window.location.pathname == '/arabic.html') {
+          var video = document.getElementById("myVideo");
+          video.play();
+
         }
 
     if(window.location.pathname == '/index.html' 
@@ -245,11 +260,11 @@ function setupScrollTriggers() {
         || window.location.pathname == '/medical-monitoring.html'
         || window.location.pathname == '/'
         ) {
-        console.log(window.location.pathname);
+        // console.log(window.location.pathname);
         document.getElementById('solutions').addEventListener('click', () => { menuHover('solutions') });
         document.getElementById('services').addEventListener('click', () => { menuHover('services') });
         
-        console.log('root');
+        // console.log('root');
         
         var subMenu = document.getElementById('sub__menu');
         var subSubMenu = document.getElementById('sub__sub__menu');
@@ -258,6 +273,12 @@ function setupScrollTriggers() {
 
         function menuHover(menuItem) {
             if(menuItem == 'solutions') {
+                document.getElementById('solutions').style.backgroundColor = '#17202a';
+                document.querySelector('#solutions .menu__link').style.color = '#ffffff';
+                
+                document.getElementById('services').style.backgroundColor = '#ffffff';
+                document.querySelector('#services .menu__link').style.color = '#17202a';
+                
                 menuState = 1;
 
                 subMenuContent = '<li id="sub__solutions__monitoring" onclick="subMenuHover(\'solutions\', \'monitoring\')" class="menu__item"><div href="samplepage.html" title="" class="menu__link">Monitoring</div></li>'
@@ -268,6 +289,12 @@ function setupScrollTriggers() {
                 document.getElementById('sub__solutions__automation').addEventListener('click', () => { subMenuHover('solutions', 'automation') });
 
             } else if(menuItem == 'services') {
+                document.getElementById('services').style.backgroundColor = '#17202a';
+                document.querySelector('#services .menu__link').style.color = '#ffffff';
+                
+                document.getElementById('solutions').style.backgroundColor = '#ffffff';
+                document.querySelector('#solutions .menu__link').style.color = '#17202a';
+                
                 menuState = 1;
 
                 subMenuContent = '<li id="sub__services__monitoring" class="menu__item"><a href="industrial-automation.html" title="" class="menu__link">Industrial Automation</a></li>'
@@ -305,30 +332,42 @@ function setupScrollTriggers() {
             
             if(field == 'solutions') {
             //console.log(field);
-                console.log(subField);
+                // console.log(subField);
                 if(subField == 'monitoring') {
+                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#17202a';
+                  document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#ffffff';
+                  
+                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#ffffff';
+                  document.querySelector('#sub__solutions__automation .menu__link').style.color = '#17202a';
+
                 subfieldsArray = ['medical monitoring', 'industrial monitoring'];
                 let lynk1 = 'medical-moniroting';
                 let lynk2 = 'industrial-moniroting';
-                subSubMenu.innerHTML =  '<li id="sub__solutions__monitoring"  class="menu__item"><a href="medical-monitoring.html" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
-                                        +'<li id="sub__solutions__monitoring"  class="menu__item"><a href="industrial-monitoring.html" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
-                console.log(3);
+                subSubMenu.innerHTML =  '<li class="menu__item"><a href="medical-monitoring.html" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
+                                        +'<li class="menu__item"><a href="industrial-monitoring.html" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
+                // console.log(3);
                 } else if (subField == 'automation') {
+                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#17202a';
+                  document.querySelector('#sub__solutions__automation .menu__link').style.color = '#ffffff';
+                  
+                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#ffffff';
+                  document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#17202a';
+
                 subfieldsArray = ['automatic product sorting', 'energy consumption optimization'];
                 let lynk1 = 'industrial-automation-main.html#automatic-product-sorting';
                 let lynk2 = 'industrial-automation-main.html#energy-consumption-optimization';
-                console.log(4);
-                subSubMenu.innerHTML =  '<li id="sub__solutions__monitoring"  class="menu__item"><a href="industrial-automation-main.html#automatic-product-sorting" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
-                                        +'<li id="sub__solutions__monitoring"  class="menu__item"><a href="industrial-automation-main.html#energy-consumption-optimization" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
+                // console.log(4);
+                subSubMenu.innerHTML =  '<li class="menu__item"><a href="industrial-automation-main.html#automatic-product-sorting" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
+                                        +'<li class="menu__item"><a href="industrial-automation-main.html#energy-consumption-optimization" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
                 }
-                console.log(lynk1);
+                // console.log(lynk1);
 
             }
         }
 
         function removeSubs(level) {
         setTimeout(() => {
-            console.log(menuState);
+            // console.log(menuState);
             if(level == 'menu' && menuState == 1 ) {
             subMenu.innerHTML = '';              
             } else if(level == 'sub' && menuState == 2) {
@@ -375,7 +414,7 @@ function setupScrollTriggers() {
         || window.location.pathname == '/ara-industrial-automation-main.html'
         || window.location.pathname == '/ara-about.html') {
 
-          console.log(window.location.pathname);
+          // console.log(window.location.pathname);
           
         document.getElementById('ara__services').addEventListener('click', () => { menuHover('الخدمات') }, false);
         document.getElementById('ara__solutions').addEventListener('click', () => { menuHover('الحلول') }, false);
@@ -386,6 +425,12 @@ function setupScrollTriggers() {
 
         function menuHover(menuItem) {
           if(menuItem == 'الحلول') {
+            document.getElementById('ara__solutions').style.backgroundColor = '#17202a';
+            document.querySelector('#ara__solutions .menu__link').style.color = '#ffffff';
+            
+            document.getElementById('ara__services').style.backgroundColor = '#ffffff';
+            document.querySelector('#ara__services .menu__link').style.color = '#17202a';
+
             let menuState = 1;
 
             subMenuContent = '<li id="sub__solutions__monitoring" class="menu__item"><div href="arasamplepage.html" title="" class="menu__link">المراقبة والمتابعة</div></li>'
@@ -396,6 +441,12 @@ function setupScrollTriggers() {
             document.getElementById('sub__solutions__automation').addEventListener('click', () => {subMenuHover('solutions', 'automation')});
 
           } else if(menuItem == 'الخدمات') {
+            document.getElementById('ara__services').style.backgroundColor = '#17202a';
+            document.querySelector('#ara__services .menu__link').style.color = '#ffffff';
+            
+            document.getElementById('ara__solutions').style.backgroundColor = '#ffffff';
+            document.querySelector('#ara__solutions .menu__link').style.color = '#17202a';
+            
             let menuState = 1;
 
             subMenuContent = '<li id="sub__services__monitoring" class="menu__item"><a href="ara-industrial-automation.html" title="" class="menu__link">الأتمتة الصناعية</a></li>'
@@ -412,16 +463,28 @@ function setupScrollTriggers() {
         function subMenuHover(field, subField) {
             menuState = 2;
             let subfieldsArray = [];
-            console.log(subField);
+            // console.log(subField);
             if(field == 'solutions') {
               //console.log(field);
                 if(subField == 'monitoring') {
-                  console.log(1);
+                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#17202a';
+                  document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#ffffff';
+                  
+                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#ffffff';
+                  document.querySelector('#sub__solutions__automation .menu__link').style.color = '#17202a';
+  
+                  // console.log(1);
                   subfieldsArray = ['medical monitoring', 'industrial monitoring'];
                   subSubMenu.innerHTML =  '<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-medical-monitoring.html" title="" class="menu__link">المراقبة والمتابعة الطبية</a></li>'
                                         +'<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-industrial-monitoring.html" title="" class="menu__link">الأتمتة الصناعية</a></li>';
                 } else if (subField == 'automation') {
-                  console.log(2);
+                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#17202a';
+                  document.querySelector('#sub__solutions__automation .menu__link').style.color = '#ffffff';
+                  
+                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#ffffff';
+                  document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#17202a';
+                  
+                  // console.log(2);
                   subfieldsArray = ['automatic product sorting', 'energy consumption optimization'];
                   subSubMenu.innerHTML =  '<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-industrial-automation-main.html#automatic-product-sorting.html" title="" class="menu__link">الفرز التلقائي للمنتج</a></li>'
                                         +'<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-industrial-automation-main.html#energy-consumption-optimization.html" title="" class="menu__link">تحسين استهلاك الطاقة</a></li>';
@@ -548,8 +611,8 @@ function setupScrollTriggers() {
             }
         });
 
-        tl.from(".page-section2__hero-title", {y: 50, opacity: 0, duration: 1.5})
-        tl.from(".page-section2__medium-title", {y: 50, opacity: 0, duration: 1.5, delay: -1.1});
+        tl.from(".page-section2__hero-title", {y: 25, opacity: 0.9, duration: 1.5})
+        tl.from(".page-section2__medium-title", {y: 25, opacity: 0.9, duration: 1.5, delay: -1.1});
         
         const tl2 = gsap.timeline({
             scrollTrigger: {
@@ -560,7 +623,7 @@ function setupScrollTriggers() {
         });
 
         tl2.from(".img1", {x: -50, opacity: 0, duration: 1.5});
-        tl2.from(".page-section2__medium-title1", {x: 50, opacity: 0, duration: 1.5, delay: -1.5});
+        tl2.from(".page-section2__medium-title1", {x: 25, opacity: 0.9, duration: 1.5, delay: -1.5});
         
         const tl3 = gsap.timeline({
             scrollTrigger: {
@@ -571,7 +634,7 @@ function setupScrollTriggers() {
         });
 
         tl3.from(".img2", {x: 50, opacity: 0, duration: 1.5});
-        tl3.from(".page-section2__medium-title2", {x: -50, opacity: 0, duration: 1.5, delay: -1.5});
+        tl3.from(".page-section2__medium-title2", {x: -25, opacity: 0.9, duration: 1.5, delay: -1.5});
         
         const tl4 = gsap.timeline({
             scrollTrigger: {
@@ -581,8 +644,8 @@ function setupScrollTriggers() {
             }
         });
 
-        tl4.from(".page-section3__flex4-item", {y: 50, opacity: 0, duration: 2});
-        tl4.from(".page-section3__image", {y: 50, opacity: 0, duration: 2, delay: -2});
+        tl4.from(".page-section3__flex4-item", {y: 25, opacity: 0.9, duration: 2});
+        tl4.from(".page-section3__image", {y: 25, opacity: 0.9, duration: 2, delay: -2});
     } 
 
     if(window.location.pathname == '/arabic.html') {
@@ -671,7 +734,7 @@ function setupScrollTriggers() {
                     let hideItems = document.getElementsByClassName('hide__item');
                     for (var i = 0; i < hideItems.length; i++) {
                       //console.log();
-                      hideItems[i].style.display = 'block';
+                      hideItems[i].style.display = 'flex';
                      }
                      hideItems[3].style.display = 'flex';
                   }
@@ -710,6 +773,7 @@ function setupScrollTriggers() {
     
     
             leScroll.moveUp = function() {
+              // console.log('moving up');
                 if (currentSectionNumber === 0) {
                             return;
                     }
@@ -754,8 +818,9 @@ function setupScrollTriggers() {
         (function (window, document, leScroll, undefined) {
             'use strict';
         
-            var listItems = document.getElementsByTagName('li');
-        
+
+            var listItems = document.getElementsByClassName('navbar_click_area');
+            console.log(listItems.length);        
             var keyCodes = {
                 up: 38,
                 down: 40
@@ -818,6 +883,7 @@ function setupScrollTriggers() {
                     return;
                 }
                 if (delta > 0) {
+                  // console.log('before up');
                     leScroll.scrolling = true;
                     leScroll.moveUp();
                     leScroll.setScrollTimeout(1500);
@@ -850,37 +916,72 @@ function setupScrollTriggers() {
                     leScroll.move();
             });
         
-            let lastScrollTop = 0;
 
-            
-            window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-              var st = window.pageYOffset || document.documentElement.scrollTop; 
-              if (st > lastScrollTop){
-                // downscroll code
-                // alert('down');
-                mousewheelHandle(0);
-                
-              } else {
-                // upscroll code
-                // alert('up');
-                mousewheelHandle(1);
-              }
-              lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-          }, false);
-          
-          // document.addEventListener('swiped-up', function(e) {
-          //     console.log(e.target); // the element that was swiped
-          // });
-          
-            // window.addEventListener("scroll", wheel2, false);
+    
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if ( /windows phone/i.test(userAgent) || /android/i.test(userAgent) ) {
+        var touchstartY = 0;
+        var touchendY = 0;
+
+        //var gesuredZone = document.getElementById('gesuredZone');
+
+        document.addEventListener('touchstart', function(event) {
+            touchstartY = event.touches[0].screenY;
+        }, false);
+
+        document.addEventListener('touchend', function(event) {
+            touchendY = event.changedTouches[0].screenY;
+            handleGesure();
+        }, false); 
+
         
-            window.addEventListener('DOMMouseScroll', wheel, false); //desktop
-            window.addEventListener('mousewheel', wheel, false); //desktop
-            document.addEventListener('mousewheel', wheel, false); //desktop
-            /*window.addEventListener('touchstart', wheelstart, false);
-            window.addEventListener('touchmove', wheelmove, false);*/
-            
-            //window.onmousewheel = document.onmousewheel = wheel;
+        function handleGesure() {
+            if (touchendY < touchstartY) {
+                // alert(swiped + 'down!');
+                // console.log('down');
+                mousewheelHandle(0);
+            }
+            if (touchendY > touchstartY) {
+                // alert(swiped + 'up!');
+                // console.log('up');
+                mousewheelHandle(1);
+            }
+        }
+
+    } else {
+
+        window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+            var st = window.pageYOffset || document.documentElement.scrollTop; 
+            if (st > lastScrollTop){
+               // downscroll code
+            //    alert('down');
+               mousewheelHandle(0);
+              //  console.log(1);
+               
+            } else {
+               // upscroll code
+            //    alert('up');
+               mousewheelHandle(1);
+              //  console.log(2);
+            }
+            lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+         }, false);
+    
+         document.addEventListener('swiped-up', function(e) {
+            // console.log(e.target); // the element that was swiped
+        });
+        window.addEventListener('DOMMouseScroll', wheel, false); //desktop
+        window.addEventListener('mousewheel', wheel, false); //desktop
+        document.addEventListener('mousewheel', wheel, false); //desktop
+    
+        /*window.addEventListener('touchstart', wheelstart, false);
+        window.addEventListener('touchmove', wheelmove, false);*/
+        
+        //window.onmousewheel = document.onmousewheel = wheel;
+
+
+    }
         
         })(window, document, leScroll);// ignore:line
         

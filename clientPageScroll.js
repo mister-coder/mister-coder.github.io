@@ -4,8 +4,8 @@ if(window.location.pathname == '/'
 (function (window, document, leScroll, undefined) {
 	'use strict';
 
-    var listItems = document.getElementsByTagName('li');
-
+    var listItems = document.getElementsByClassName('navbar_click_area');
+    console.log(listItems.length);
 	let lastScrollTop = 0;
 
 	var keyCodes = {
@@ -65,11 +65,12 @@ if(window.location.pathname == '/'
     }
 */
     var mousewheelHandle = function(delta) {
-        // alert('moving');
+        // console.log('moving');
         if(leScroll.scrolling) {
             return;
         }
         if (delta > 0) {
+            // console.log('before up');
             leScroll.scrolling = true;
             leScroll.moveUp();
             leScroll.setScrollTimeout(1500);
@@ -102,36 +103,72 @@ if(window.location.pathname == '/'
             leScroll.move();
     });
 
-    window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-        var st = window.pageYOffset || document.documentElement.scrollTop; 
-        if (st > lastScrollTop){
-           // downscroll code
-        //    alert('down');
-           mousewheelHandle(0);
-           console.log(1);
-           
-        } else {
-           // upscroll code
-        //    alert('up');
-           mousewheelHandle(1);
-           console.log(2);
-        }
-        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-     }, false);
 
-     document.addEventListener('swiped-up', function(e) {
-        console.log(e.target); // the element that was swiped
-    });
-    window.addEventListener('DOMMouseScroll', wheel, false); //desktop
-    window.addEventListener('mousewheel', wheel, false); //desktop
-    document.addEventListener('mousewheel', wheel, false); //desktop
-
-
-
-    /*window.addEventListener('touchstart', wheelstart, false);
-    window.addEventListener('touchmove', wheelmove, false);*/
     
-    //window.onmousewheel = document.onmousewheel = wheel;
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if ( /windows phone/i.test(userAgent) || /android/i.test(userAgent) ) {
+        var touchstartY = 0;
+        var touchendY = 0;
+
+        //var gesuredZone = document.getElementById('gesuredZone');
+
+        document.addEventListener('touchstart', function(event) {
+            touchstartY = event.touches[0].screenY;
+        }, false);
+
+        document.addEventListener('touchend', function(event) {
+            touchendY = event.changedTouches[0].screenY;
+            handleGesure();
+        }, false); 
+
+        
+        function handleGesure() {
+            if (touchendY < touchstartY) {
+                // alert(swiped + 'down!');
+                console.log('down');
+                mousewheelHandle(0);
+            }
+            if (touchendY > touchstartY) {
+                // alert(swiped + 'up!');
+                console.log('up');
+                mousewheelHandle(1);
+            }
+        }
+
+    } else {
+
+        window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+            var st = window.pageYOffset || document.documentElement.scrollTop; 
+            if (st > lastScrollTop){
+               // downscroll code
+            //    alert('down');
+               mousewheelHandle(0);
+               console.log(1);
+               
+            } else {
+               // upscroll code
+            //    alert('up');
+               mousewheelHandle(1);
+               console.log(2);
+            }
+            lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+         }, false);
+    
+         document.addEventListener('swiped-up', function(e) {
+            console.log(e.target); // the element that was swiped
+        });
+        window.addEventListener('DOMMouseScroll', wheel, false); //desktop
+        window.addEventListener('mousewheel', wheel, false); //desktop
+        document.addEventListener('mousewheel', wheel, false); //desktop
+    
+        /*window.addEventListener('touchstart', wheelstart, false);
+        window.addEventListener('touchmove', wheelmove, false);*/
+        
+        //window.onmousewheel = document.onmousewheel = wheel;
+
+
+    }
 
 })(window, document, leScroll);// ignore:line
 

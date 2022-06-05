@@ -28,7 +28,7 @@ if(window.location.pathname == '/'
 					let hideItems = document.getElementsByClassName('hide__item');
 					for (var i = 0; i < hideItems.length; i++) {
 						//console.log();
-						hideItems[i].style.display = 'block';
+						hideItems[i].style.display = 'flex';
 					 }
 					 hideItems[3].style.display = 'flex';
 				}
@@ -69,6 +69,7 @@ if(window.location.pathname == '/'
 
 
 		leScroll.moveUp = function() {
+			console.log('moving up');
 			if (currentSectionNumber === 0) {
 						return;
 				}

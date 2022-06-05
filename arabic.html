@@ -119,7 +119,7 @@
         © <span id="this__year"></span> Autonera
       </div>
 
-      <a href="/assets/Autonera-Pro.pdf" id="ara_profile__download" class="profile__download mix__blend tooltip hide__item" download >
+      <a href="/assets/Autonera-AR.pdf" id="ara_profile__download" class="profile__download mix__blend tooltip hide__item" download >
         الملف التعريفي
       </a>
       <script>
@@ -142,8 +142,8 @@
 
       </script>
 
-      <a id="contact_us_text" href="araContactUs.html" class="contact_us hide__item">
-        <div id="contact_us_text" class="contact_us_text">
+      <a id="contact_us_text" href="araContactUs.html" class="contact_us hide__item mix__blend">
+        <div class="contact_us_text">
           اطلب زيارة مجانية
         </div>
       </a>
@@ -197,21 +197,21 @@
 
       <div id="mask" style="overscroll-behavior: none;">
         <nav>
-          <ul class="vertical__nav">
-            <div class="navbar_click_area">
-              <li data-section="0" id="data_section_0" class="data_section"></li>
+          <ul class="ara__nav">
+            <div data-section="0" class="navbar_click_area">
+              <li id="data_section_0" class="data_section"></li>
             </div>
-            <div class="navbar_click_area">
-              <li data-section="1" id="data_section_1" class="data_section"></li>
+            <div data-section="1" class="navbar_click_area">
+              <li id="data_section_1" class="data_section"></li>
             </div>
-            <div class="navbar_click_area">
-              <li data-section="2" id="data_section_2" class="data_section"></li>
+            <div data-section="2" class="navbar_click_area">
+              <li id="data_section_2" class="data_section"></li>
             </div>
-            <div class="navbar_click_area">
-              <li data-section="3" id="data_section_3" class="data_section"></li>
+            <div data-section="3" class="navbar_click_area">
+              <li id="data_section_3" class="data_section"></li>
             </div>
-            <div class="navbar_click_area">
-              <li data-section="4" id="data_section_4" class="data_section"></li>
+            <div data-section="4" class="navbar_click_area">
+              <li id="data_section_4" class="data_section"></li>
             </div>
           </ul>
         </nav>
@@ -221,11 +221,16 @@
                     <!-- ======= section1 ======= --> 
       
                     <section
-                    style="--src:url(assets/6c833c27435632f4384666365301229c.png);
-                    background-image: url('assets/6c833c27435632f4384666365301229c.png');"
                     id="autonera-section1__section1"
                     class="autonera-section1__section1 sectionOne layout"
                   >
+                  <!-- style="--src:url(assets/6c833c27435632f4384666365301229c.png);
+                  background-image: url('assets/6c833c27435632f4384666365301229c.png');" -->
+                    
+                  <video autoplay muted loop defaultMuted playsinline id="myVideo" style="min-height: 100vh; min-width: 100vw; position: fixed; object-fit: cover;">
+                    <source src="autonera-1.4.2.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
 
         
                     <div class="autonera-section1__flex layout">
@@ -240,13 +245,13 @@
                   <section id="autonera-section2__section2 sectionTwo" class="autonera-section2__section2 layout">
 
                     
-                    <div class="autonera-section2__flex1 layout">
-                      <div class="autonera-section2__flex1-item">
-                        <!--img src="assets/63136b0123bcd0e8be1de15f9d7cf41e.png" alt="" class="autonera-section2__image3 imageTwo layout" /-->
-                        <video class="autonera-section2__image3 imageTwo layout" loop autoplay muted >
-                          <source src="assets/148116867_main_xxl.mp4" type="video/mp4">
-                          <!--source src="movie.ogg" type="video/ogg"-->
-                        Your browser does not support the video tag.
+                    <div class="autonera-section2__flex1 layout ara__pad">
+                      <div class="autonera-section4__flex7-item">
+                        <!-- <img src="assets/monitoring.gif" alt="" class="autonera-section4__image1 imageTwo layout" /> -->
+                        
+                        <video autoplay muted loop defaultMuted playsinline id="myVideo" class="autonera-section4__image1 imageTwo layout" >
+                          <source src="assets/monitoring.mp4" type="video/mp4">
+                          Your browser does not support HTML5 video.
                         </video>
                       </div>
                       <div class="autonera-section2__flex1-spacer"></div>
@@ -285,7 +290,7 @@
                   <comment content="======= End section2 =======" break="true"></comment
                   ><!-- ======= section3 ======= --> 
                   <section class="autonera-section3__section3 sectionThree layout">
-                    <div class="autonera-section3__flex4 layout">
+                    <div class="autonera-section3__flex4 layout ara__pad">
                       <div class="autonera-section3__flex4-item">
                         <px-posize
                           track-style='{"flexGrow":1}'
@@ -318,16 +323,27 @@
                       </div>
                       <div class="autonera-section3__flex4-spacer"></div>
                       <div class="autonera-section3__flex4-item">
-                        <img src="assets/55af5a4b11da3a8aa6695052738e9833.png" alt="" class="autonera-section3__image3 imageThree layout" />
+                        <!-- <img src="assets/automation.gif" alt="" class="autonera-section3__image3 imageThree layout" /> -->
+
+                        
+                        <video autoplay muted loop defaultMuted playsinline id="myVideo" class="autonera-section3__image3 imageThree layout" >
+                          <source src="assets/automations.mp4" type="video/mp4">
+                          Your browser does not support HTML5 video.
+                        </video>
                       </div>
                     </div>
                   </section>
                   <comment content="======= End section3 =======" break="true"></comment
                   ><!-- ======= section4 ======= --> 
                   <section class="autonera-section4__section4 sectionFour layout">
-                    <div class="autonera-section4__flex7 layout">
+                    <div class="autonera-section4__flex7 layout ara__pad">
                       <div class="autonera-section4__flex7-item">
-                        <img src="assets/7d1a39cb648510a7caeb4b9647b5ffec.png" alt="" class="autonera-section4__image1 imageFour layout" />
+                        <!-- <img src="assets/7d1a39cb648510a7caeb4b9647b5ffec.png" alt="" class="autonera-section4__image1 imageFour layout" /> -->
+                        
+                        <video autoplay muted loop defaultMuted playsinline id="myVideo" class="autonera-section4__image1 imageFour layout" >
+                          <source src="assets/control.mp4" type="video/mp4">
+                          Your browser does not support HTML5 video.
+                        </video>
                       </div>
                       <div class="autonera-section4__flex7-spacer"></div>
                       <div class="autonera-section4__flex7-item">
