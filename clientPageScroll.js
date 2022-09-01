@@ -73,11 +73,11 @@ if(window.location.pathname == '/'
             // console.log('before up');
             leScroll.scrolling = true;
             leScroll.moveUp();
-            leScroll.setScrollTimeout(1500);
+            leScroll.setScrollTimeout(2000);
         } else if (delta <= 0) {
             leScroll.scrolling = true;
             leScroll.moveDown();
-            leScroll.setScrollTimeout(1500);
+            leScroll.setScrollTimeout(2000);
         }
     };
 

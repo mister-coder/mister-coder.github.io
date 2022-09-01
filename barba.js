@@ -259,12 +259,13 @@ function setupScrollTriggers() {
         || window.location.pathname == '/industrial-monitoring.html'
         || window.location.pathname == '/medical-monitoring.html'
         || window.location.pathname == '/'
+        || window.location.pathname == '/contactUs.html'
         ) {
         // console.log(window.location.pathname);
         document.getElementById('solutions').addEventListener('click', () => { menuHover('solutions') });
         document.getElementById('services').addEventListener('click', () => { menuHover('services') });
         
-        // console.log('root');
+        console.log('root');
         
         var subMenu = document.getElementById('sub__menu');
         var subSubMenu = document.getElementById('sub__sub__menu');
@@ -273,11 +274,14 @@ function setupScrollTriggers() {
 
         function menuHover(menuItem) {
             if(menuItem == 'solutions') {
-                document.getElementById('solutions').style.backgroundColor = '#17202a';
+                document.getElementById('solutions').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
                 document.querySelector('#solutions .menu__link').style.color = '#ffffff';
                 
-                document.getElementById('services').style.backgroundColor = '#ffffff';
+                document.getElementById('services').style.backgroundImage = '';
                 document.querySelector('#services .menu__link').style.color = '#17202a';
+
+
+
                 
                 menuState = 1;
 
@@ -287,12 +291,13 @@ function setupScrollTriggers() {
                 
                 document.getElementById('sub__solutions__monitoring').addEventListener('click', () => { subMenuHover('solutions', 'monitoring') });
                 document.getElementById('sub__solutions__automation').addEventListener('click', () => { subMenuHover('solutions', 'automation') });
+    
 
             } else if(menuItem == 'services') {
-                document.getElementById('services').style.backgroundColor = '#17202a';
+                document.getElementById('services').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
                 document.querySelector('#services .menu__link').style.color = '#ffffff';
                 
-                document.getElementById('solutions').style.backgroundColor = '#ffffff';
+                document.getElementById('solutions').style.backgroundImage = '';
                 document.querySelector('#solutions .menu__link').style.color = '#17202a';
                 
                 menuState = 1;
@@ -302,6 +307,22 @@ function setupScrollTriggers() {
                 subMenu.innerHTML = subMenuContent;
 
                 subSubMenu.innerHTML = '';
+
+            
+            
+                document.getElementById('sub__services__monitoring').addEventListener("mouseover", function() {
+                  document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                });
+                document.getElementById('sub__services__monitoring').addEventListener("mouseout", function() {
+                  document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                });
+    
+                document.getElementById('sub__services__automation').addEventListener("mouseover", function() {
+                  document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                });
+                document.getElementById('sub__services__automation').addEventListener("mouseout", function() {
+                  document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                });
             
             } else if(menuItem == 'الحلول') {
               let menuState = 1;
@@ -334,33 +355,63 @@ function setupScrollTriggers() {
             //console.log(field);
                 // console.log(subField);
                 if(subField == 'monitoring') {
-                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#17202a';
+                  document.getElementById('sub__solutions__monitoring').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
                   document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#ffffff';
                   
-                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#ffffff';
+                  document.getElementById('sub__solutions__automation').style.backgroundImage = '';
                   document.querySelector('#sub__solutions__automation .menu__link').style.color = '#17202a';
 
                 subfieldsArray = ['medical monitoring', 'industrial monitoring'];
                 let lynk1 = 'medical-moniroting';
                 let lynk2 = 'industrial-moniroting';
-                subSubMenu.innerHTML =  '<li class="menu__item"><a href="medical-monitoring.html" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
-                                        +'<li class="menu__item"><a href="industrial-monitoring.html" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
+                subSubMenu.innerHTML =  '<li id="sub__medical__monitoring" class="menu__item"><a href="medical-monitoring.html" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
+                                        +'<li id="sub__industrial__monitoring" class="menu__item"><a href="industrial-monitoring.html" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
                 // console.log(3);
+            
+                  document.getElementById('sub__medical__monitoring').addEventListener("mouseover", function() {
+                    document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                  });
+                  document.getElementById('sub__medical__monitoring').addEventListener("mouseout", function() {
+                    document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                  });
+
+                  document.getElementById('sub__industrial__monitoring').addEventListener("mouseover", function() {
+                    document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                  });
+                  document.getElementById('sub__industrial__monitoring').addEventListener("mouseout", function() {
+                    document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                  });
+
                 } else if (subField == 'automation') {
-                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#17202a';
+                  document.getElementById('sub__solutions__automation').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
                   document.querySelector('#sub__solutions__automation .menu__link').style.color = '#ffffff';
                   
-                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#ffffff';
+                  document.getElementById('sub__solutions__monitoring').style.backgroundImage = '';
                   document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#17202a';
 
-                subfieldsArray = ['automatic product sorting', 'energy consumption optimization'];
-                let lynk1 = 'industrial-automation-main.html#automatic-product-sorting';
-                let lynk2 = 'industrial-automation-main.html#energy-consumption-optimization';
-                // console.log(4);
-                subSubMenu.innerHTML =  '<li class="menu__item"><a href="industrial-automation-main.html#automatic-product-sorting" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
-                                        +'<li class="menu__item"><a href="industrial-automation-main.html#energy-consumption-optimization" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
-                }
-                // console.log(lynk1);
+                  subfieldsArray = ['automatic product sorting', 'energy consumption optimization'];
+                  let lynk1 = 'industrial-automation-main.html#automatic-product-sorting';
+                  let lynk2 = 'industrial-automation-main.html#energy-consumption-optimization';
+                  // console.log(4);
+                  subSubMenu.innerHTML =  '<li id="automatic__product__sorting" class="menu__item"><a href="industrial-automation-main.html#automatic-product-sorting" title="" class="menu__link">'+subfieldsArray[0]+'</a></li>'
+                                          +'<li id="energy__consumption__optimization" class="menu__item"><a href="industrial-automation-main.html#energy-consumption-optimization" title="" class="menu__link">'+subfieldsArray[1]+'</a></li>';
+                                          
+
+                    document.getElementById('automatic__product__sorting').addEventListener("mouseover", function() {
+                      document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                    });
+                    document.getElementById('automatic__product__sorting').addEventListener("mouseout", function() {
+                      document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                    });
+
+                    document.getElementById('energy__consumption__optimization').addEventListener("mouseover", function() {
+                      document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                    });
+                    document.getElementById('energy__consumption__optimization').addEventListener("mouseout", function() {
+                      document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                    });
+                  }
+                  // console.log(lynk1);
 
             }
         }
@@ -425,37 +476,53 @@ function setupScrollTriggers() {
 
         function menuHover(menuItem) {
           if(menuItem == 'الحلول') {
-            document.getElementById('ara__solutions').style.backgroundColor = '#17202a';
-            document.querySelector('#ara__solutions .menu__link').style.color = '#ffffff';
+            document.getElementById('ara__solutions').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
+            document.querySelector('#ara__solutions .ara__menu__link').style.color = '#ffffff';
             
-            document.getElementById('ara__services').style.backgroundColor = '#ffffff';
-            document.querySelector('#ara__services .menu__link').style.color = '#17202a';
+            document.getElementById('ara__services').style.backgroundImage = '';
+            document.querySelector('#ara__services .ara__menu__link').style.color = '#17202a';
 
             let menuState = 1;
 
-            subMenuContent = '<li id="sub__solutions__monitoring" class="menu__item"><div href="arasamplepage.html" title="" class="menu__link">المراقبة والمتابعة</div></li>'
-                            +'<li id="sub__solutions__automation" class="menu__item"><div href="arasamplepage.html" title="" class="menu__link">الأتمتة الصناعية</div></li>';
+            subMenuContent = '<li id="sub__solutions__monitoring" class="menu__item"><div href="arasamplepage.html" title="" class="ara__menu__link">المراقبة والمتابعة</div></li>'
+                            +'<li id="sub__solutions__automation" class="menu__item"><div href="arasamplepage.html" title="" class="ara__menu__link">الأتمتة الصناعية</div></li>';
             document.getElementById('sub__menu').innerHTML = subMenuContent;
 
             document.getElementById('sub__solutions__monitoring').addEventListener('click', () => {subMenuHover('solutions', 'monitoring')} );
             document.getElementById('sub__solutions__automation').addEventListener('click', () => {subMenuHover('solutions', 'automation')});
 
           } else if(menuItem == 'الخدمات') {
-            document.getElementById('ara__services').style.backgroundColor = '#17202a';
-            document.querySelector('#ara__services .menu__link').style.color = '#ffffff';
+            document.getElementById('ara__services').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
+            document.querySelector('#ara__services .ara__menu__link').style.color = '#ffffff';
             
-            document.getElementById('ara__solutions').style.backgroundColor = '#ffffff';
-            document.querySelector('#ara__solutions .menu__link').style.color = '#17202a';
+            document.getElementById('ara__solutions').style.backgroundImage = '';
+            document.querySelector('#ara__solutions .ara__menu__link').style.color = '#17202a';
             
             let menuState = 1;
 
-            subMenuContent = '<li id="sub__services__monitoring" class="menu__item"><a href="ara-industrial-automation.html" title="" class="menu__link">الأتمتة الصناعية</a></li>'
-                            +'<li id="sub__services__automation" class="menu__item"><a href="ara-monitoring.html" title="" class="menu__link">المراقبة والمتابعة</a></li>';
+            subMenuContent = '<li id="sub__services__monitoring" class="menu__item"><a href="ara-industrial-automation.html" title="" class="ara__menu__link">الأتمتة الصناعية</a></li>'
+                            +'<li id="sub__services__automation" class="menu__item"><a href="ara-monitoring.html" title="" class="ara__menu__link">المراقبة والمتابعة</a></li>';
             document.getElementById('sub__menu').innerHTML = subMenuContent;
 
             document.getElementById('sub__sub__menu').innerHTML = '';
 
             //console.log('input');
+
+            
+            
+            document.getElementById('sub__services__monitoring').addEventListener("mouseover", function() {
+              document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+            });
+            document.getElementById('sub__services__monitoring').addEventListener("mouseout", function() {
+              document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+            });
+
+            document.getElementById('sub__services__automation').addEventListener("mouseover", function() {
+              document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+            });
+            document.getElementById('sub__services__automation').addEventListener("mouseout", function() {
+              document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+            });
 
           }
         }
@@ -467,27 +534,56 @@ function setupScrollTriggers() {
             if(field == 'solutions') {
               //console.log(field);
                 if(subField == 'monitoring') {
-                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#17202a';
-                  document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#ffffff';
+                  document.getElementById('sub__solutions__monitoring').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
+                  document.querySelector('#sub__solutions__monitoring .ara__menu__link').style.color = '#ffffff';
                   
-                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#ffffff';
-                  document.querySelector('#sub__solutions__automation .menu__link').style.color = '#17202a';
+                  document.getElementById('sub__solutions__automation').style.backgroundImage = '';
+                  document.querySelector('#sub__solutions__automation .ara__menu__link').style.color = '#17202a';
   
                   // console.log(1);
                   subfieldsArray = ['medical monitoring', 'industrial monitoring'];
-                  subSubMenu.innerHTML =  '<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-medical-monitoring.html" title="" class="menu__link">المراقبة والمتابعة الطبية</a></li>'
-                                        +'<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-industrial-monitoring.html" title="" class="menu__link">الأتمتة الصناعية</a></li>';
+                  subSubMenu.innerHTML =  '<li id="sub__medical__monitoring"  class="menu__item"><a href="ara-medical-monitoring.html" title="" class="ara__menu__link">المراقبة والمتابعة الطبية</a></li>'
+                                        +'<li id="sub__industrial__monitoring"  class="menu__item"><a href="ara-industrial-monitoring.html" title="" class="ara__menu__link">الأتمتة الصناعية</a></li>';
+
+
+                  document.getElementById('sub__medical__monitoring').addEventListener("mouseover", function() {
+                    document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                  });
+                  document.getElementById('sub__medical__monitoring').addEventListener("mouseout", function() {
+                    document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                  });
+
+                  document.getElementById('sub__industrial__monitoring').addEventListener("mouseover", function() {
+                    document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                  });
+                  document.getElementById('sub__industrial__monitoring').addEventListener("mouseout", function() {
+                    document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                  });
                 } else if (subField == 'automation') {
-                  document.getElementById('sub__solutions__automation').style.backgroundColor = '#17202a';
-                  document.querySelector('#sub__solutions__automation .menu__link').style.color = '#ffffff';
+                  document.getElementById('sub__solutions__automation').style.backgroundImage = 'linear-gradient(to right, #3525b3, #c11145)';
+                  document.querySelector('#sub__solutions__automation .ara__menu__link').style.color = '#ffffff';
                   
-                  document.getElementById('sub__solutions__monitoring').style.backgroundColor = '#ffffff';
-                  document.querySelector('#sub__solutions__monitoring .menu__link').style.color = '#17202a';
+                  document.getElementById('sub__solutions__monitoring').style.backgroundImage = '';
+                  document.querySelector('#sub__solutions__monitoring .ara__menu__link').style.color = '#17202a';
                   
                   // console.log(2);
                   subfieldsArray = ['automatic product sorting', 'energy consumption optimization'];
-                  subSubMenu.innerHTML =  '<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-industrial-automation-main.html#automatic-product-sorting.html" title="" class="menu__link">الفرز التلقائي للمنتج</a></li>'
-                                        +'<li id="sub__solutions__monitoring"  class="menu__item"><a href="ara-industrial-automation-main.html#energy-consumption-optimization.html" title="" class="menu__link">تحسين استهلاك الطاقة</a></li>';
+                  subSubMenu.innerHTML =  '<li id="automatic__product__sorting"  class="menu__item"><a href="ara-industrial-automation-main.html#automatic-product-sorting" title="" class="ara__menu__link">الفرز التلقائي للمنتج</a></li>'
+                                        +'<li id="energy__consumption__optimization"  class="menu__item"><a href="ara-industrial-automation-main.html#energy-consumption-optimization" title="" class="ara__menu__link">تحسين استهلاك الطاقة</a></li>';
+
+                  document.getElementById('automatic__product__sorting').addEventListener("mouseover", function() {
+                    document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                  });
+                  document.getElementById('automatic__product__sorting').addEventListener("mouseout", function() {
+                    document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                  });
+
+                  document.getElementById('energy__consumption__optimization').addEventListener("mouseover", function() {
+                    document.querySelector(".custom-cursor").classList.add("custom-cursor--link");
+                  });
+                  document.getElementById('energy__consumption__optimization').addEventListener("mouseout", function() {
+                    document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+                  });
                 } else if (subField == 'logistics') {
                   subfieldsArray = ['fleet management system', 'warehouse monitoring system'];
                 }
@@ -602,50 +698,66 @@ function setupScrollTriggers() {
         && window.location.pathname != '/index.html'
         && window.location.pathname != '/arabic.html'
         ) {
+
+          if(document.getElementsByClassName('page-section2__section2').length > 0) {
             
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".page-section2__section2",
-                start: "top bottom",
-                toggleActions: "restart none none none"
-            }
-        });
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".page-section2__section2",
+                    start: "top bottom",
+                    toggleActions: "restart none none none"
+                }
+            });
+    
+            tl.from(".page-section2__hero-title", {y: 25, opacity: 0.9, duration: 1.5})
+            tl.from(".page-section2__medium-title", {y: 25, opacity: 0.9, duration: 1.5, delay: -1.1});
+            
+          }
 
-        tl.from(".page-section2__hero-title", {y: 25, opacity: 0.9, duration: 1.5})
-        tl.from(".page-section2__medium-title", {y: 25, opacity: 0.9, duration: 1.5, delay: -1.1});
+          if(document.getElementsByClassName('page-section2__medium-title').length > 0) {
+
+            const tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".page-section2__medium-title",
+                    start: "bottom bottom",
+                    toggleActions: "restart none none none"
+                }
+            });
+    
+            tl2.from(".img1", {x: -50, opacity: 0, duration: 1.5});
+            tl2.from(".page-section2__medium-title1", {x: 25, opacity: 0.9, duration: 1.5, delay: -1.5});
+            
+          }
         
-        const tl2 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".page-section2__medium-title",
-                start: "bottom bottom",
-                toggleActions: "restart none none none"
-            }
-        });
-
-        tl2.from(".img1", {x: -50, opacity: 0, duration: 1.5});
-        tl2.from(".page-section2__medium-title1", {x: 25, opacity: 0.9, duration: 1.5, delay: -1.5});
+          if(document.getElementsByClassName('page-section2__flex2').length > 0) {
         
-        const tl3 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".page-section2__flex2",
-                start: "bottom bottom",
-                toggleActions: "restart none none none"
-            }
-        });
+            const tl3 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".page-section2__flex2",
+                    start: "bottom bottom",
+                    toggleActions: "restart none none none"
+                }
+            });
+    
+            tl3.from(".img2", {x: 50, opacity: 0, duration: 1.5});
+            tl3.from(".page-section2__medium-title2", {x: -25, opacity: 0.9, duration: 1.5, delay: -1.5});
 
-        tl3.from(".img2", {x: 50, opacity: 0, duration: 1.5});
-        tl3.from(".page-section2__medium-title2", {x: -25, opacity: 0.9, duration: 1.5, delay: -1.5});
+          }
+
+          if(document.getElementsByClassName('page-section2__flex2').length > 0) {
         
-        const tl4 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".page-section3__section3",
-                start: "top bottom",
-                toggleActions: "restart none none none"
-            }
-        });
+            const tl4 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".page-section3__section3",
+                    start: "top bottom",
+                    toggleActions: "restart none none none"
+                }
+            });
+    
+            tl4.from(".page-section3__flex4-item", {y: 25, opacity: 0.9, duration: 2});
+            tl4.from(".page-section3__image", {y: 25, opacity: 0.9, duration: 2, delay: -2});
 
-        tl4.from(".page-section3__flex4-item", {y: 25, opacity: 0.9, duration: 2});
-        tl4.from(".page-section3__image", {y: 25, opacity: 0.9, duration: 2, delay: -2});
+          }
     } 
 
     if(window.location.pathname == '/arabic.html') {
@@ -820,7 +932,9 @@ function setupScrollTriggers() {
         
 
             var listItems = document.getElementsByClassName('navbar_click_area');
-            console.log(listItems.length);        
+            // console.log(listItems.length);      
+            let lastScrollTop = 0;
+
             var keyCodes = {
                 up: 38,
                 down: 40
@@ -886,11 +1000,11 @@ function setupScrollTriggers() {
                   // console.log('before up');
                     leScroll.scrolling = true;
                     leScroll.moveUp();
-                    leScroll.setScrollTimeout(1500);
+                    leScroll.setScrollTimeout(2000);
                 } else if (delta <= 0) {
                     leScroll.scrolling = true;
                     leScroll.moveDown();
-                    leScroll.setScrollTimeout(1500);
+                    leScroll.setScrollTimeout(2000);
                 }
             };
         

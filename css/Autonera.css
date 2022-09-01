@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
 * {
   cursor: none;
   text-decoration: none;
@@ -58,10 +60,10 @@
       width: 77.39%;
       margin: 25px auto; } }
 
-.autonera-section1__hero-title4 {
+/* .autonera-section1__hero-title4 {                              //  Default styling
   display: flex;
   justify-content: center;
-  font: 700 90px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 700 90px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: white;
   text-align: center;
   letter-spacing: 0px; }
@@ -83,7 +85,35 @@
       font-size: 43px; } }
   @media (max-width: 383px) {
     .autonera-section1__hero-title4 {
+      font-size: 40px; } } */
+
+.autonera-section1__hero-title4 {                                 /* Secondary styling */
+  display: flex;
+  justify-content: center;
+  font: 700 90px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 1199px) {
+    .autonera-section1__hero-title4 {
+      font-size: 45px;
+      text-align: center; } }
+  @media (max-width: 991px) {
+    .autonera-section1__hero-title4 {
       font-size: 40px; } }
+  @media (max-width: 767px) {
+    .autonera-section1__hero-title4 {
+      font-size: 35px; } }
+  @media (max-width: 575px) {
+    .autonera-section1__hero-title4 {
+      font-size: 30px; } }
+  @media (max-width: 479px) {
+    .autonera-section1__hero-title4 {
+      font-size: 25px; } }
+  @media (max-width: 383px) {
+    .autonera-section1__hero-title4 {
+      font-size: 20px; } }
 
 .autonera-section1__hero-title4.layout {
   position: relative;
@@ -110,10 +140,10 @@
     .autonera-section1__hero-title4.layout {
       margin: 27px 0px 0px; } }
 
-.autonera-section1__hero-title3 {
+/* .autonera-section1__hero-title3 {                               // Default styling
   display: flex;
   justify-content: center;
-  font: 35px/1.2 "Helvetica", "Roboto", Arial, serif;
+  font: 35px/1.2 "Tajawal", "Helvetica", "Roboto", Arial, serif;
   color: white;
   text-align: center;
   letter-spacing: 0px; }
@@ -135,7 +165,35 @@
       font-size: 21px; } }
   @media (max-width: 383px) {
     .autonera-section1__hero-title3 {
+      font-size: 20px; } } */
+
+.autonera-section1__hero-title3 {                           /* Secondary styling */
+  display: flex;
+  justify-content: center;
+  font: 35px/1.2 "Tajawal", "Helvetica", "Roboto", Arial, serif;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 1199px) {
+    .autonera-section1__hero-title3 {
+      font-size: 22.5px;
+      text-align: center; } }
+  @media (max-width: 991px) {
+    .autonera-section1__hero-title3 {
       font-size: 20px; } }
+  @media (max-width: 767px) {
+    .autonera-section1__hero-title3 {
+      font-size: 17.5px; } }
+  @media (max-width: 575px) {
+    .autonera-section1__hero-title3 {
+      font-size: 15px; } }
+  @media (max-width: 479px) {
+    .autonera-section1__hero-title3 {
+      font-size: 12.5px; } }
+  @media (max-width: 383px) {
+    .autonera-section1__hero-title3 {
+      font-size: 10px; } }
 
 .autonera-section1__hero-title3.layout {
   position: relative;
@@ -271,7 +329,7 @@
   height: 100%; }
 
 .autonera-section2__hero-title1 {
-  font: 600 65px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 600 65px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: white;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
@@ -301,7 +359,7 @@
   height: min-content; }
 
 .autonera-section2__hero-title2 {
-  font: 500 35px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 500 35px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: #fff;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
@@ -380,7 +438,7 @@
       margin: 15px auto 0px; } }
 
 .autonera-section2__hero-title3 {
-  font: 35px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 35px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: white;
   text-align: justify;
   letter-spacing: 0px; }
@@ -510,13 +568,13 @@
   height: 100%; }
 
 .autonera-section3__hero-title1 {
-  font: 600 65px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 600 65px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: white;
+  text-align: center;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
     .autonera-section3__hero-title1 {
-      font-size: 57px;
-      text-align: left; } }
+      font-size: 57px; } }
   @media (max-width: 991px) {
     .autonera-section3__hero-title1 {
       font-size: 49px; } }
@@ -540,7 +598,7 @@
   height: min-content; }
 
 .autonera-section3__hero-title2 {
-  font: 500 35px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 500 35px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: #fff;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
@@ -568,6 +626,7 @@
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
+  text-align: center;
   margin: 17px 0px 0px; }
   @media (max-width: 1199px) {
     .autonera-section3__hero-title2.layout {
@@ -619,7 +678,7 @@
       margin: 15px auto 0px; } }
 
 .autonera-section3__hero-title3 {
-  font: 35px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 35px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: white;
   text-align: justify;
   letter-spacing: 0px; }
@@ -818,7 +877,7 @@
   height: 100%; }
 
 .autonera-section4__hero-title1 {
-  font: 600 65px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 600 65px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: white;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
@@ -907,7 +966,7 @@
   margin-top: 0px;
   margin-bottom: 0px;
   margin: 0px;
-  font: 500 35px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 500 35px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: #fff;
   letter-spacing: 0px;
   white-space: pre-wrap; }
@@ -962,7 +1021,7 @@
       margin: 15px auto 0px; } }
 
 .autonera-section4__hero-title3 {
-  font: 35px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 35px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: white;
   text-align: justify;
   letter-spacing: 0px; }
@@ -1125,7 +1184,7 @@
   margin-top: 0px;
   margin-bottom: 0px;
   margin: 0px;
-  font: 600 50px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 600 50px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: black;
   letter-spacing: 0px;
   white-space: pre-wrap; }
@@ -1150,12 +1209,12 @@
       font-size: 26px; } }
 
 .autonera-section5__hero-title-span0 {
-  font: 600 1em/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 600 1em/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: #17202aff;
   letter-spacing: 0px; }
 
 .autonera-section5__hero-title-span1 {
-  font: 600 1em/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 600 1em/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: #c5c5c5ff;
   letter-spacing: 0px; }
 
@@ -1193,6 +1252,7 @@
 
 .autonera-section5__flex11-item {
   display: flex;
+  justify-content: end;
   flex-direction: column;
   position: relative;
   flex: 1 1 350px; }
@@ -1259,25 +1319,26 @@
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  width: 55.71%;
-  margin: 0px 44.29% 0px 0%; }
+  /* width: 55.71%; */
+  margin: 0px 0 0px 0%; }
 
 .autonera-section5__subtitle1 {
   overflow: visible;
   margin-top: 0px;
   margin-bottom: 0px;
   margin: 0px;
-  font: 500 22px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 500 22px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: #17202a;
   letter-spacing: 0px;
+  text-align: left;
   white-space: pre-line; }
   @media (max-width: 1199px) {
     .autonera-section5__subtitle1 {
       font-size: 21px;
-      text-align: left; } }
+      text-align: center; } }
   @media (max-width: 991px) {
     .autonera-section5__subtitle1 {
-      font-size: 19px; } }
+      font-size: 19px;; } }
   @media (max-width: 767px) {
     .autonera-section5__subtitle1 {
       font-size: 18px; } }
@@ -1318,26 +1379,26 @@
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  width: 76.29%;
-  margin: 11px 23.71% 0px 0%; }
+  /* width: 76.29%; */
+  margin: 11px 0 0px 0%; }
   @media (max-width: 1199px) {
     .autonera-section5__subtitle11-box.layout {
-      margin: 10px 23.71% 0px 0%; } }
+      margin: 10px 0 0px 0%; } }
   @media (max-width: 991px) {
     .autonera-section5__subtitle11-box.layout {
-      margin: 8px 23.71% 0px 0%; } }
+      margin: 8px 0 0px 0%; } }
   @media (max-width: 767px) {
     .autonera-section5__subtitle11-box.layout {
-      margin: 7px 23.71% 0px 0%; } }
+      margin: 7px 0 0px 0%; } }
   @media (max-width: 575px) {
     .autonera-section5__subtitle11-box.layout {
-      margin: 6px 23.71% 0px 0%; } }
+      margin: 6px 0 0px 0%; } }
   @media (max-width: 383px) {
     .autonera-section5__subtitle11-box.layout {
-      margin: 5px 23.71% 0px 0%; } }
+      margin: 5px 0 0px 0%; } }
 
 .autonera-section5__subtitle {
-  font: 20px/1.2 Helvetica, "Roboto", Arial, serif;
+  font: 20px/1.2 "Tajawal", Helvetica, "Roboto", Arial, serif;
   color: #17202a;
   letter-spacing: 0px; }
   @media (max-width: 1199px) {
@@ -1508,6 +1569,16 @@
 
 .mix__blend {
   mix-blend-mode: exclusion;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #84E483;
+  background: rgb(123, 27, 124, 0.8);
+}
+
+::selection {
+  color: #84E483;
+  background: rgb(123, 27, 124, 0.8);
 }
 
 .arrow__wrapper {

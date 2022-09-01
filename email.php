@@ -36,20 +36,20 @@
         // $mail->SMTPDebug = 4;
         $mail->Host = 'smtp.zoho.com';       // Specify main and backup SMTP servers 
         $mail->SMTPAuth = true;               // Enable SMTP authentication 
-        $mail->Username = 'ragi@autonera-sa.com';   // SMTP username 
-        $mail->Password = 'AA2022@a';   // SMTP password 
+        $mail->Username = 'ragi@autonera.sa';   // SMTP username 
+        $mail->Password = 'Aa2022@a';   // SMTP password 
         $mail->SMTPSecure = 'tls';            // Enable TLS encryption, `ssl` also accepted 
         $mail->Port = 587;                    // TCP port to connect to  //587  //465
         
         // Sender info 
-        $mail->setFrom('ragi@autonera-sa.com', 'Autonera main'); 
-        $mail->addReplyTo('ragi@autonera-sa.com', 'Autonera main'); 
+        $mail->setFrom('ragi@autonera.sa', 'Autonera main'); 
+        $mail->addReplyTo('ragi@autonera.sa', 'Autonera main'); 
         
         // Add a recipient 
-        $mail->addAddress('info@autonera-sa.com'); 
+        $mail->addAddress('info@autonera.sa'); 
         
         //$mail->addCC('cc@example.com'); 
-        $mail->addBCC('ragi@autonera-sa.com'); 
+        $mail->addBCC('ragi@autonera.sa'); 
         
         // Set email format to HTML 
         $mail->isHTML(true); 
